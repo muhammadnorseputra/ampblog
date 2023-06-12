@@ -2,8 +2,10 @@
     <div class="flex justify-between items-center ampstart-sidebar-header">
 
         <div>
-            <amp-img src="<?= base_url("assets/img/blog/mediabalangan_mini.png") ?>" width="60" height="60"
-                layout="fixed" alt="The Blog" class="mt2"></amp-img>
+            <a href="<?= base_url() ?>">
+                <amp-img src="<?= base_url("assets/img/blog/mediabalangan_mini.png") ?>" width="60" height="60"
+                    layout="fixed" alt="The Blog" class="mt2"></amp-img>
+            </a>
         </div>
         <div role="button" aria-label="close sidebar" on="tap:header-sidebar.toggle" tabindex="0"
             class="ampstart-navbar-trigger items-start">
@@ -13,7 +15,7 @@
     <nav class="ampstart-sidebar-nav ampstart-nav">
         <ul class="list-reset m0 p0 ampstart-label">
             <li class="ampstart-nav-item">
-                <a class="ampstart-nav-link" href="#">Beranda</a>
+                <a class="ampstart-nav-link" href="<?= base_url() ?>">Beranda</a>
             </li>
             <li class="ampstart-nav-item ampstart-nav-dropdown relative border-bottom border-top">
                 <!-- Start Dropdown-inline -->

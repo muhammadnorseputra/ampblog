@@ -5,8 +5,11 @@
     <meta charset="utf-8" />
     <title>The Recipe Blog</title>
     <link rel="canonical" href="<?= current_url() ?>" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
     <meta name="amp-google-client-id-api" content="googleanalytics" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
 
     <script async="" src="https://cdn.ampproject.org/v0.js"></script>
 
@@ -81,6 +84,7 @@
 
     <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async=""></script>
     <script custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js" async=""></script>
+
     </script>
     <script type="application/ld+json">
     {
@@ -177,7 +181,7 @@
         --bs-dark-border-subtle: #adb5bd;
         --bs-white-rgb: 255, 255, 255;
         --bs-black-rgb: 0, 0, 0;
-        --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        --bs-font-sans-serif: system-ui, "Poppins", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
         --bs-body-font-family: var(--bs-font-sans-serif);
@@ -14010,8 +14014,8 @@
 
     /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
     html {
-        font-family: sans-serif;
-        line-height: 1.15;
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.5;
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
     }
@@ -14062,10 +14066,9 @@
         transition: all .3s ease;
     }
 
-    a:active,
     a:hover {
         outline-width: 0;
-        color: #003f93;
+        color: #20c997;
     }
 
     abbr[title] {
@@ -14139,7 +14142,7 @@
     optgroup,
     select,
     textarea {
-        font-family: sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-size: 100%;
         line-height: 1.15;
         margin: 0;
@@ -15374,7 +15377,7 @@
         background: #fff;
         color: #4a4a4a;
         font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-            Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial,
+            Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial, Poppins,
             sans-serif;
         min-width: 315px;
         overflow-x: hidden;
@@ -15501,7 +15504,7 @@
         margin: 0;
         padding: 0;
         font-weight: 400;
-        letter-spacing: 0.06rem;
+        font-family: "Poppins", sans-serif;
     }
 
     a,
@@ -16183,11 +16186,12 @@
     }
 
     /* My Custome */
-    .cards {
-        padding: 25px;
-        background-color: #232323;
-        border-radius: 5px;
-        color: #fff;
+
+    .line-clamp {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
     </style>
 </head>

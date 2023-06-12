@@ -7,11 +7,16 @@
     <!-- End Sidebar -->
     <!-- End Navbar -->
 
-    <main id="content" role="main" class="">
-      <?php $this->load->view($content); ?>
-    </main>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <?php $this->load->view($content); ?>
+            </div>
+        </div>
+
+    </div>
 
     <!-- Start Footer -->
     <?php include_once("footer.php") ?>
     <!-- End Footer -->
-  </body>
+</body>
