@@ -99,12 +99,10 @@
     <div class="row">
         <div class="container text-center mt-5">
             <div class="d-flex flex-row justify-between">
-                <a rel="nofollow noopener" href="<?= base_url('index.php') == current_url() ? "#" : base_url() ?>"
-                    class="btn btn-sm btn-rounded <?= base_url('index.php') == current_url() ? "btn-secondary text-mutted" : "btn-success text-warning" ?> px-4 py-2">H</a>
-                <a href="<?= base_url('nextpage/'.$posts_nextoken) ?>"
-                    class="btn btn-sm btn-rounded btn-success px-4 py-2 text-warning">
-                    Muat postingan selanjutnya
-                </a>
+                <button <?= base_url('index.php') == current_url() ? "disabled" : "" ?>
+                    class="btn btn-sm btn-rounded btn-secondary text-mutted px-3"><i class="fa fa-home" aria-hidden="true"></i></button>
+                <button class="btn btn-success py-2 inline-flex flex-row justify-content-between align-items-center" on="tap:AMP.navigateTo(url=<?= 'nextpage/'.$posts_nextoken ?>)">
+                <span> Postingan selanjutnya</span> <i class="fa fa-chevron-right ml-4" aria-hidden="true"></i></button>
             </div>
         </div>
     </div>

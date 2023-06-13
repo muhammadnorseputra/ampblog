@@ -8,13 +8,15 @@
         layout="fixed" alt="The Blog"></amp-img>
 
     <div class="me-md-auto ms-auto">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Type title article ..."
-                aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-        </div>
+        <form class="sample-form" method="POST" action="<?= base_url('search') ?>" target="_top">
+            <div class="input-group">
+                <input type="text" name="query" class="form-control rounded-start-pill ps-4" placeholder="Type title article ..."
+                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary rounded-start-0 rounded-end-pill" type="submit" id="button-addon2"><i class="fa fa-search mr-2"></i> Search</button>
+            </div>
+        </form>
     </div>
     <div class="d-none d-md-block">
-        sdfsd
+        <button class="btn btn-success rounded-cicle text-white" role="button" type="button"><i class="fa fa-user"></i></button>
     </div>
 </header>

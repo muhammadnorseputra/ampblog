@@ -19,6 +19,14 @@ class Home extends CI_Controller {
         ->_display();
     }
 
+    public function singgle()
+    {
+        $data = [
+            'content' => 'pages/postingan/singgle'
+        ];
+        $this->load->view('layouts/app', $data);
+    }
+
     protected function getPost($maxResults=1, $imgSrc="true", $body="true", $nextpage=null) {
         $pagetoken = "";
         if($nextpage !== null) {
