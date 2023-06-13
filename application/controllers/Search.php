@@ -28,17 +28,25 @@ class Search extends CI_Controller
     $this->blog_id = $this->config->item('blog_id');
   }
   protected function getPost($q) {
-    $fetch = $this->curl->simple_get('https://www.googleapis.com/blogger/v3/blogs/'.$this->blog_id.'/posts/search?q='.$q.'&fetchBodies=true&fetchImages=true&key='.$this->key);
+    $fetch = $this->curl->simple_get('https://www.googleapis.com/blogger/v3/blogs/'.$this->blog_id.'/posts/search?q='.$q.'&fetchBodies=false&fetchImages=true&key='.$this->key);
     return json_decode($fetch);
   }
   public function index()
   {
     $q = $this->input->post('query');
+    set_cookie('searchQuery', $q, 1000);
     $posts = $this->getPost($q);
+
+    if(isset($posts->items) && !empty($q)) {
+      $postdata = $posts->items;
+    } else {
+      $postdata = [];
+    }
+    
     $data = [
       'content' => 'pages/postingan/search',
       'query' => $q,
-      'posts' => $posts->items != NULL ? $posts->items : NULL,
+      'posts' => $postdata,
       'posts_nextoken' => isset($posts->nextPageToken)
     ];
     $this->load->view('layouts/app', $data);

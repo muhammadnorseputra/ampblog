@@ -1,12 +1,12 @@
 <?php 
 
-if (!function_exists('fetchImages')) {
+if (!function_exists('fetchImage')) {
 
     /**
-     * fetchImages Post by ID Post
+     * fetchImage Post by ID Post
      * 
      *  @return bool  */
-    function fetchImages($postId)
+    function fetchImage($postId)
     {
         $url = "https://www.googleapis.com/blogger/v3/blogs/7792147091805313605/posts/{$postId}?key=AIzaSyBMgrvqLoK_LKur-HfdQpGc90Bo2lYXdi8&fetchImages=true&fetchBody=false";
         $ci = get_instance();

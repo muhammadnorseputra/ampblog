@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css" />
 
     <script async="" src="https://cdn.ampproject.org/v0.js"></script>
 
@@ -85,6 +86,7 @@
 
     <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async=""></script>
     <script custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js" async=""></script>
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
 
     </script>
     <script type="application/ld+json">
@@ -15970,7 +15972,6 @@
         background-color: #fff;
         color: #000;
         z-index: 999;
-        box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
     }
 
     .ampstart-headerbar+ :not(amp-sidebar),

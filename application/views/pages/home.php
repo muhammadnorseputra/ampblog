@@ -27,9 +27,9 @@
                         <br />
                         <?php
                             $utc = strtotime($featured->published.' UTC');
-                            $datepost = date("d-m-Y", $utc);
+                            $datepost = formatTgl(date("Y-m-d", $utc));
                         ?>
-                        <small>Publish On: <?= $datepost ?></small>
+                        <small><?= $datepost ?></small>
                     </span>
                     <a class="text-decoration-none bold ml-auto border p1"
                         href="<?= base_url(url_title($featured->title, 'dash',true)) ?>">Readmore</a>
@@ -42,7 +42,7 @@
     </article>
 </section>
 <section class="blogList">
-    <div class="row row-gap-5">
+    <div class="row row-gap-md-5">
 
         <?php
         $start = 1;
@@ -63,10 +63,10 @@
                         </a>
                     </div>
                     <div class="article-description flex justify-start flex-column">
-                        <h3 class="fs-6 fw-bold lh-sm mt-2 mb-3"><a
+                        <h3 class="fs-6 fw-bold lh-sm mt-2 mb-md-3 px-md-0 px-2"><a
                                 href="<?= base_url(url_title($p->title, 'dash',true)) ?>"
                                 class="text-decoration-none line-clamp"><?= $p->title ?></a></h3>
-                        <div class="flex justify-start items-center my2">
+                        <div class="flex justify-start items-center mt-md-2 mb-md-2 mb-4 px-md-0 px-2">
                             <amp-img alt="<?= $p->author->displayName ?>" src="<?= $p->author->image->url ?>"
                                 layout="fixed" height="30" width="30" placeholder class="circle my2 mr2"> </amp-img>
                             <span>
@@ -75,12 +75,13 @@
                                 <br />
                                 <?php
                             $utc = strtotime($p->published.' UTC');
-                            $datepost = date("d-m-Y", $utc);
+                            $datepost = formatTgl(date("Y-m-d", $utc));
                         ?>
-                                <small>Publish On: <?= $datepost ?></small>
+                                <small><?= $datepost ?></small>
                             </span>
                             <a class="text-decoration-none bold ml-auto border p1"
-                                href="<?= base_url(url_title($p->title, 'dash',true)) ?>">Readmore</a>
+                                href="<?= base_url(url_title($p->title, 'dash',true)) ?>">Readmore <i
+                                    class="fa fa-chevron-right ms-1"></i></a>
                         </div>
 
 
@@ -100,9 +101,12 @@
         <div class="container text-center mt-5">
             <div class="d-flex flex-row justify-between">
                 <button <?= base_url('index.php') == current_url() ? "disabled" : "" ?>
-                    class="btn btn-sm btn-rounded btn-secondary text-mutted px-3"><i class="fa fa-home" aria-hidden="true"></i></button>
-                <button class="btn btn-success py-2 inline-flex flex-row justify-content-between align-items-center" on="tap:AMP.navigateTo(url=<?= 'nextpage/'.$posts_nextoken ?>)">
-                <span> Postingan selanjutnya</span> <i class="fa fa-chevron-right ml-4" aria-hidden="true"></i></button>
+                    class="btn btn-sm btn-rounded btn-secondary text-mutted px-3"><i class="fa fa-home"
+                        aria-hidden="true"></i></button>
+                <button class="btn btn-success py-2 d-flex flex-row justify-content-between align-items-center"
+                    on="tap:AMP.navigateTo(url=<?= 'nextpage/'.$posts_nextoken ?>)">
+                    <span> Postingan selanjutnya</span> <i class="fa fa-chevron-right ms-2"
+                        aria-hidden="true"></i></button>
             </div>
         </div>
     </div>

@@ -12,10 +12,29 @@
             ✕
         </div>
     </div>
+    <div class="me-md-auto ms-auto d-block d-md-none mb-4">
+        <form class="sample-form" method="POST" action="<?= base_url('search') ?>" target="_top">
+            <?php
+                $placeholders = get_cookie('searchQuery');
+                $queryOld = isset($placeholders) ? $placeholders : "Search article: type title or labels ...";
+            ?>
+            <div class="input-group">
+                <input type="text" name="query"
+                    class="form-control rounded-start-pill ps-3 fs-6 fw-light text-lowercase"
+                    placeholder="<?= $queryOld ?>" aria-label="Search" aria-describedby="button-addon2">
+                <button
+                    class="btn btn-secondary rounded-start-0 rounded-end-pill d-flex justify-content-between align-items-center gap-2"
+                    type="submit" id="button-addon2"><i class="fa fa-search mr-2"></i> <span class="d-none d-md-block">
+                        Search</span></button>
+            </div>
+        </form>
+    </div>
     <nav class="ampstart-sidebar-nav ampstart-nav">
         <ul class="list-reset m0 p0 ampstart-label">
             <li class="ampstart-nav-item">
-                <a class="ampstart-nav-link" href="<?= base_url() ?>">Beranda</a>
+                <a class="ampstart-nav-link mt-4" href="<?= base_url() ?>"><i
+                        class="fa fa-home text-secondary fs-6"></i>
+                    <span>Beranda</span></a>
             </li>
             <li class="ampstart-nav-item ampstart-nav-dropdown relative border-bottom border-top">
                 <!-- Start Dropdown-inline -->
