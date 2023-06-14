@@ -87,6 +87,8 @@
     <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async=""></script>
     <script custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js" async=""></script>
     <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+
 
     </script>
     <script type="application/ld+json">
@@ -16188,7 +16190,17 @@
     }
 
     /* My Custome */
-
+    article.post > amp-img {
+        background-color: gray;
+        border-radius: 8px !important;
+        padding: 5px;
+        border: 1px solid #000;
+    }
+    article.post > p,
+    article.post > * {
+        line-height: 2em;
+        font-family: "Poppins", sans-serif;
+    }
     .line-clamp {
         display: -webkit-box;
         -webkit-line-clamp: 2;

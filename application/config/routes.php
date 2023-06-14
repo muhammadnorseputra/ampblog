@@ -53,6 +53,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 * @FRONT END
 */
 $route['nextpage/(:any)'] = 'home/nextpage/$1';
+$route['(:num)/(:num)/(:any)'] = 'posts/singgle/$1/$2/$3';
+
 
 $route['default_controller'] = 'home';
 $route['404_override'] = '';

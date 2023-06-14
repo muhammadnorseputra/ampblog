@@ -19,14 +19,6 @@ class Home extends CI_Controller {
         ->_display();
     }
 
-    public function singgle()
-    {
-        $data = [
-            'content' => 'pages/postingan/singgle'
-        ];
-        $this->load->view('layouts/app', $data);
-    }
-
     protected function getPost($maxResults=1, $imgSrc="true", $body="true", $nextpage=null) {
         $pagetoken = "";
         if($nextpage !== null) {
@@ -53,7 +45,7 @@ class Home extends CI_Controller {
         $posts_list = $this->getPost(6,"true","false",$next);
         $data = [
             'posts' => $posts_list->items,
-            'posts_nextoken' => $posts_list->nextPageToken,
+            'posts_nextoken' => @$posts_list->nextPageToken,
             'content' => 'pages/postingan/nextpage'
         ];
         $this->load->view('layouts/app', $data);

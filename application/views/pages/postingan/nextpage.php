@@ -14,9 +14,8 @@
                 <div class="flex flex-column justify-between">
                     <div>
                         <a href="<?= base_url(url_title($p->title, 'dash',true)) ?>">
-                            <amp-img alt="<?= $p->title ?>" src="<?= $p->images[0]->url ?>" layout="responsive"
-                                height="190" width="320" placeholder class="rounded mb-3 border shadow-sm"> </amp-img>
-                        </a>
+                            0
+0                           </a>
                     </div>
                     <div class="article-description flex justify-start flex-column">
                         <h3 class="fs-6 fw-bold lh-sm mt-2 mb-md-3"><a
@@ -62,8 +61,8 @@
                 <a rel="nofollow noopener" href="<?= base_url('index.php') == current_url() ? "#" : base_url() ?>"
                     class="btn btn-sm btn-rounded <?= base_url('index.php') == current_url() ? "btn-secondary text-mutted" : "btn-success text-warning" ?> px-3 py-2"><i
                         class="fa fa-home"></i></a>
-                <button class="btn btn-success d-flex justify-content-between align-items-center"
-                    on="tap:AMP.navigateTo(url=<?= $posts_nextoken ?>)">
+                <button class="btn <?= isset($posts_nextoken) ? "btn-success" : "btn-secondary" ?> d-flex justify-content-between align-items-center"
+                    on="tap:AMP.navigateTo(url=<?= $posts_nextoken ?>)" <?= isset($posts_nextoken) ? "" : "disabled" ?>>
                     <span class="d-none d-md-block">Postingan
                         selanjutnya</span> <i class="fa fa-chevron-right ms-md-2"></i></button>
             </div>
