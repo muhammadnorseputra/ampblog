@@ -3,7 +3,42 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>The Recipe Blog</title>
+    <!-- Primary Meta Tags -->
+    <title><?= isset($title) ? $title : "⚡ Home" ?> - <?= $this->config->item('blog_name') ?></title>
+    <meta name="title" content="<?= $this->config->item('blog_name') ?>" />
+    <meta name="description" content="<?= $this->config->item('blog_desc') ?>" />
+    <link href="<?= base_url('assets/img/blog/favicon.ico') ?>" rel="icon" type="image/x-icon" />
+
+    <!-- Open Graph / Facebook -->
+    <meta content="id_ID" property="og:locale" />
+    <meta content="en_US" property="og:locale:alternate" />
+    <meta content="en_GB" property="og:locale:alternate" />
+    <meta content="<?= $this->config->item('blog_name') ?>" property="og:site_name" />
+    <meta property="og:type" content="<?= isset($og['type']) ? $og['type'] : "website" ?>" />
+    <meta property="og:url" content="<?= isset($og['url']) ? $og['url'] : base_url() ?>" />
+    <meta property="og:title"
+        content="<?= isset($og['title']) ? $og['title'] ." - ". $this->config->item('blog_name') : $this->config->item('blog_name') ?>" />
+    <meta property="og:description"
+        content="<?= isset($og['desc']) ? preg_replace('/^(?:\s*\R)+|\s*($|\R)/', "", $og['desc']) : $this->config->item('blog_desc') ?>" />
+    <meta property="og:image"
+        content="<?= isset($og['image']) ? $og['image'] : base_url("assets/img/blog/mediabalangan_mini.png") ?>" />
+    <meta
+        content="<?= isset($og['title']) ? $og['title'] ." - ". $this->config->item('blog_name') : $this->config->item('blog_name') ?>"
+        property="og:image:alt" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="<?= isset($tw['type']) ? $tw['type'] : "summary_large_image" ?>" />
+    <meta property="twitter:url" content="<?= isset($tw['url']) ? $tw['url'] : base_url() ?>" />
+    <meta property="twitter:title"
+        content="<?= isset($og['title']) ? $og['title'] ." - ". $this->config->item('blog_name') : $this->config->item('blog_name') ?>" />
+    <meta property="twitter:description"
+        content="<?= isset($tw['desc']) ? preg_replace('/^(?:\s*\R)+|\s*($|\R)/', "", $og['desc']) : $this->config->item('blog_desc') ?>" />
+    <meta property="twitter:image"
+        content="<?= isset($tw['image']) ? $tw['image'] : base_url("assets/img/blog/mediabalangan_mini.png") ?>" />
+    <meta
+        content="<?= isset($og['title']) ? $og['title'] ." - ". $this->config->item('blog_name') : $this->config->item('blog_name') ?>"
+        property="twitter:image:alt" />
+
     <link rel="canonical" href="<?= current_url() ?>" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
     <meta name="amp-google-client-id-api" content="googleanalytics" />
@@ -87,7 +122,8 @@
     <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async=""></script>
     <script custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js" async=""></script>
     <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
-    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js">
+    </script>
 
 
     </script>
@@ -16190,17 +16226,19 @@
     }
 
     /* My Custome */
-    article.post > .separator {
+    article.post>.separator {
         background-color: #eee;
         border-radius: 8px !important;
         overflow: hidden;
         margin-bottom: 10px;
     }
-    article.post > p,
-    article.post > * {
+
+    article.post>p,
+    article.post>* {
         line-height: 2em;
         font-family: "Poppins", sans-serif;
     }
+
     .line-clamp {
         display: -webkit-box;
         -webkit-line-clamp: 2;

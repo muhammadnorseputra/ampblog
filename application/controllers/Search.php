@@ -56,6 +56,7 @@ class Search extends CI_Controller
     }
     
     $data = [
+      'title' => 'Telusuri: '.$q,
       'content' => 'pages/postingan/search',
       'query' => $q,
       'posts' => $postdata,
@@ -78,6 +79,7 @@ class Search extends CI_Controller
       $postdata = [];
     }
     $data = [
+      'title' => $name,
       'content' => 'pages/postingan/labels',
       'posts' => $postdata,
       'posts_nextoken' => @$posts->nextPageToken,

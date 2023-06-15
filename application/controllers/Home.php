@@ -36,6 +36,7 @@ class Home extends CI_Controller {
     public function nextpage($next=null) {
         $posts_list = getPosts(6,"true","false",$next);
         $data = [
+            'title' => 'Blog',
             'posts' => $posts_list->items,
             'posts_nextoken' => @$posts_list->nextPageToken,
             'content' => 'pages/postingan/nextpage'

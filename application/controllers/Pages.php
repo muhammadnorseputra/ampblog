@@ -29,9 +29,28 @@ class Pages extends CI_Controller
   public function page($id)
   {
     $detail = getPage($id);
+    $og = [
+      'type' => 'article',
+      'url' => base_url('page/'.$id),
+      'title' => $detail->title,
+      'desc' => headlineText($detail->content,200),
+      'image' => 'https://1.bp.blogspot.com/-E250bQMM8tk/XomH5DdorOI/AAAAAAAAPY8/SCYwi79WjckWC8wHKK7OblI82BpT9JquACNcBGAsYHQ/s1600/jagotheme-img.png'
+    ];
+
+    $tw = [
+      'type' => 'summary',
+      'url' => base_url('page/'.$id),
+      'title' => $detail->title,
+      'desc' => headlineText($detail->content,200),
+      'image' => 'https://1.bp.blogspot.com/-E250bQMM8tk/XomH5DdorOI/AAAAAAAAPY8/SCYwi79WjckWC8wHKK7OblI82BpT9JquACNcBGAsYHQ/s1600/jagotheme-img.png'
+    ];
+    
     $data = [
+      'title' => $detail->title,
       'd' => $detail,
-      'content' => 'pages/halaman/index'
+      'content' => 'pages/halaman/index',
+      'og' => $og,
+      'tw' => $tw
     ];
     $this->load->view('layouts/app', $data);
   }

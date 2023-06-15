@@ -8,7 +8,7 @@
     <amp-img class="me-auto" src="<?= base_url("assets/img/blog/mediabalangan.png") ?>" width="150" height="40"
         layout="fixed" alt="The Blog"></amp-img>
 
-    <div class="me-auto d-none d-md-block w-50">
+    <div class="mx-auto d-none d-md-block w-25">
         <form class="sample-form" method="GET" action="<?= base_url('search') ?>" target="_top">
             <div class="input-group">
                 <input type="text" name="q" class="form-control rounded-start-pill ps-4"

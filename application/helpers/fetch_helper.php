@@ -47,7 +47,7 @@ if (!function_exists('getFeatured')) {
     function getFeatured()
     {
         $ci = get_instance();
-        $url = 'https://www.googleapis.com/blogger/v3/blogs/'.$ci->config->item('blog_id').'/posts?key='.$ci->config->item('apikey').'&status=live&maxResults=1&fetchImages=true&fetchBodies=true&fields=items(title,content,labels,url,published,images(url),author(displayName,url,image(url)))';
+        $url = 'https://www.googleapis.com/blogger/v3/blogs/'.$ci->config->item('blog_id').'/posts?key='.$ci->config->item('apikey').'&status=live&maxResults=1&fetchImages=true&fetchBodies=true&fields=items(title,content,labels,url,published,updated,images(url),author(displayName,url,image(url)))';
         $fetch = $ci->curl->simple_get($url);
 
         $result = json_decode($fetch);
