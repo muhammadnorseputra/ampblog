@@ -2,22 +2,21 @@
     <div class="row">
         <div class="col-md-10 offset-lg-1">
             <article class="post">
-                <?= tags($post->labels,"success","rounded-pill px-3 py-1") ?>
                 <h1 class="fs-3 fw-bold lh-sm text-black mt-4 mb-2">
-                    <?= $post->title ?>
+                    <?= $d->title ?>
                 </h1>
                 <div class="flex justify-content-start align-items-center mt-md-2 mb-md-2">
-                        <amp-img alt="<?= $post->author->displayName ?>" src="<?= $post->author->image->url ?>"
+                        <amp-img alt="<?= $d->author->displayName ?>" src="<?= $d->author->image->url ?>"
                             layout="fixed" height="30" width="30" placeholder class="circle my2 mr2"> </amp-img>
                         <span>
-                            <a class="text-decoration-none bold" href="<?= $post->author->url ?>"
-                                target="_blank"><?= $post->author->displayName ?></a>
+                            <a class="text-decoration-none bold" href="<?= $d->author->url ?>"
+                                target="_blank"><?= $d->author->displayName ?></a>
                             <br />
                             <?php
-                        $utc = strtotime($post->published.' UTC');
+                        $utc = strtotime($d->published.' UTC');
                         $datepost = formatTgl(date("Y-m-d", $utc));
                     ?>
-                            <small><i class="fa fa-calendar"></i> <?= $datepost ?> <?= readTime($featured_content) ?></small> 
+                            <small><i class="fa fa-calendar"></i> <?= $datepost ?></small>
                         </span>
                         <div class="ms-auto d-flex justify-content=around align-items-center gap-2">
                         <span>Share: </span> 
@@ -27,7 +26,7 @@
                         <amp-social-share class="rounded-circle" aria-label="Share by email " type="email" width="30" height="30"></amp-social-share>
                     </div>
                 </div>
-                <?= $featured_content ?>
+                <?= $d->content ?>
             </article>
         </div>
     </div>

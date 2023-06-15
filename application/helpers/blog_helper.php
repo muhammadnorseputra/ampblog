@@ -51,6 +51,33 @@ if (!function_exists('formatTgl')) {
   }
 }
 
+if (!function_exists('tags')) {
 
+    function tags($tag,$varian="success",$styleOption="")
+    {
+        $body = '<div class="d-flex justify-content-start align-items-center gap-2 mb-2">';
+        $body .= '<i class="fa fa-tags mr-2"></i>';
+        foreach($tag as $label):
+            $body .= '<button class="btn btn-'.$varian.' '.$styleOption.' d-flex flex-row justify-content-between align-items-center" on="tap:AMP.navigateTo(url=\''.base_url('search/label/'.$label).'\')">
+            <span> '.$label.'</span></button>';
+        endforeach;
+        $body .= "</div>";
 
-/* End of file blog_helper.php and path \application\helpers\blog_helper.php */
+        return $body;
+    }
+}
+
+if (!function_exists('readTime')) {
+    function readTime($text, $wpm = 200) {
+        $totalWords = str_word_count(strip_tags($text));
+        $minutes = floor($totalWords / $wpm);
+        $seconds = floor($totalWords % $wpm / ($wpm / 60));
+        
+        // return array(
+        //     'minutes' => $minutes,
+        //     'seconds' => $seconds
+        // );
+
+        return "<i class='fa fa-clock-o mx-2'></i>".$minutes ." min"." ".$seconds." sec, reading";
+    }
+}

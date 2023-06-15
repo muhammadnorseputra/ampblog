@@ -53,6 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 * @FRONT END
 */
 $route['nextpage/(:any)'] = 'home/nextpage/$1';
+$route['page/(:num)'] = 'pages/page/$1';
 $route['(:num)/(:num)/(:any)'] = 'posts/singgle/$1/$2/$3';
 
 

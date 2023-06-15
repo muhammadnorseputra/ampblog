@@ -16190,11 +16190,11 @@
     }
 
     /* My Custome */
-    article.post > amp-img {
-        background-color: gray;
+    article.post > .separator {
+        background-color: #eee;
         border-radius: 8px !important;
-        padding: 5px;
-        border: 1px solid #000;
+        overflow: hidden;
+        margin-bottom: 10px;
     }
     article.post > p,
     article.post > * {

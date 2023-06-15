@@ -13,13 +13,13 @@
         </div>
     </div>
     <div class="me-md-auto ms-auto d-block d-md-none mb-4">
-        <form class="sample-form" method="POST" action="<?= base_url('search') ?>" target="_top">
+        <form class="sample-form" method="GET" action="<?= base_url('search') ?>" target="_top">
             <?php
                 $placeholders = get_cookie('searchQuery');
                 $queryOld = isset($placeholders) ? $placeholders : "Search article: type title or labels ...";
             ?>
             <div class="input-group">
-                <input type="text" name="query"
+                <input type="text" name="q"
                     class="form-control rounded-start-pill ps-3 fs-6 fw-light text-lowercase"
                     placeholder="<?= $queryOld ?>" aria-label="Search" aria-describedby="button-addon2">
                 <button
@@ -36,32 +36,54 @@
                         class="fa fa-home text-secondary fs-6"></i>
                     <span>Beranda</span></a>
             </li>
-            <li class="ampstart-nav-item ampstart-nav-dropdown relative border-bottom border-top">
+            <li class="ampstart-nav-item ampstart-nav-dropdown relative border-top">
                 <!-- Start Dropdown-inline -->
                 <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown">
                     <section>
-                        <header class="bold">Topic</header>
+                        <header class="bold">Pemoggraman</header>
                         <ul class="ampstart-dropdown-items list-reset m0 p0">
                             <li class="ampstart-dropdown-item">
-                                <a href="#" class="text-decoration-none">Media HTML 5</a>
+                                <a href="<?= base_url('search/label/Html') ?>" class="text-decoration-none">HTML 5</a>
                             </li>
                             <li class="ampstart-dropdown-item">
-                                <a href="#" class="text-decoration-none">Media Javascript</a>
+                                <a href="<?= base_url('search/label/Javascript') ?>" class="text-decoration-none">Javascript</a>
                             </li>
                             <li class="ampstart-dropdown-item">
-                                <a href="#" class="text-decoration-none">Media PHP</a>
+                                <a href="<?= base_url('search/label/PHP') ?>" class="text-decoration-none">PHP</a>
+                            </li>
+                        </ul>
+                    </section>
+                </amp-accordion>
+                <!-- End Dropdown-inline -->
+            </li>
+            <li class="ampstart-nav-item ampstart-nav-dropdown relative">
+                <!-- Start Dropdown-inline -->
+                <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown">
+                    <section>
+                        <header class="bold">Pengetahuan</header>
+                        <ul class="ampstart-dropdown-items list-reset m0 p0">
+                            <li class="ampstart-dropdown-item">
+                                <a href="<?= base_url('search/label/Teknologi') ?>" class="text-decoration-none">Teknologi</a>
                             </li>
                             <li class="ampstart-dropdown-item">
-                                <a href="#" class="text-decoration-none">Media Blogger</a>
+                                <a href="<?= base_url('search/label/Balangan') ?>" class="text-decoration-none">Balangan</a>
+                            </li>
+                        </ul>
+                    </section>
+                </amp-accordion>
+                <!-- End Dropdown-inline -->
+            </li>
+            <li class="ampstart-nav-item ampstart-nav-dropdown relative border-bottom">
+                <!-- Start Dropdown-inline -->
+                <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown">
+                    <section>
+                        <header class="bold">Tips dan Trik</header>
+                        <ul class="ampstart-dropdown-items list-reset m0 p0">
+                            <li class="ampstart-dropdown-item">
+                                <a href="<?= base_url('search/label/Blogger') ?>" class="text-decoration-none">Blogger</a>
                             </li>
                             <li class="ampstart-dropdown-item">
-                                <a href="#" class="text-decoration-none">Media Adsense</a>
-                            </li>
-                            <li class="ampstart-dropdown-item">
-                                <a href="#" class="text-decoration-none">Media Teknologi</a>
-                            </li>
-                            <li class="ampstart-dropdown-item">
-                                <a href="#" class="text-decoration-none">Media Balangan</a>
+                                <a href="<?= base_url('search/label/Adsense') ?>" class="text-decoration-none">Adsense</a>
                             </li>
                         </ul>
                     </section>
@@ -73,7 +95,7 @@
           ?>
             <li class="ampstart-nav-item">
                 <a class="ampstart-nav-link"
-                    href="<?= base_url('static/'.url_title($p->title, 'dash', true)) ?>"><?= ucwords($p->title) ?></a>
+                    href="<?= base_url('page/'.$p->id) ?>"><?= ucwords($p->title) ?></a>
             </li>
             <?php endforeach; ?>
         </ul>

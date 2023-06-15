@@ -29,7 +29,7 @@ class Posts extends CI_Controller
 
   protected function getPost($path)
   {
-    $fetch = $this->curl->simple_get("https://www.googleapis.com/blogger/v3/blogs/7792147091805313605/posts/bypath?path={$path}&key=AIzaSyBMgrvqLoK_LKur-HfdQpGc90Bo2lYXdi8");
+    $fetch = $this->curl->simple_get("https://www.googleapis.com/blogger/v3/blogs/7792147091805313605/posts/bypath?&fields=published,title,labels,content,author(displayName,url,image(url))&path={$path}&key=AIzaSyBMgrvqLoK_LKur-HfdQpGc90Bo2lYXdi8");
     return json_decode($fetch);
   }
 

@@ -1,7 +1,7 @@
 <section class="blogList" id="blogList">
     <div class="row">
         <h3 class="my-4 ml-4 fw-bold border-start border-4 border-success">Posts: <span
-                class="text-success"><?= $query ?></span></h3>
+                class="text-success"><?= $posts_label ?></span></h3>
     </div>
     <div class="row row-gap-md-5">
 
@@ -24,10 +24,9 @@
                                 </amp-img>
                             </a>
                         </div>
-                        <?= tags($p->labels, "outline-secondary", "rounded-pill px-2 py-0") ?>
                         <h3 class="fs-6 fw-bold lh-sm mt-2 mb-md-3 mb-2 px-3 px-md-0"><a
                                 href="<?= base_url(urlWithoutDomain($p->url)) ?>"
-                                class="text-decoration-none line-clamp"><?= highlight_phrase($p->title, $query, '<span class="text-success">', '</span>') ?></a>
+                                class="text-decoration-none line-clamp"><?= highlight_phrase($p->title, $posts_label, '<span class="text-success">', '</span>') ?></a>
                         </h3>
                         <div class="flex justify-start items-center mt-md-2 mb-md-2 mb-4 px-3 px-md-0">
                             <amp-img alt="<?= $p->author->displayName ?>" src="<?= $p->author->image->url ?>"
@@ -77,7 +76,7 @@
                     Muat postingan selanjutnya
                 </a> -->
                 <button class="btn <?= empty($posts_nextoken) ? "btn-secondary" : "btn-success" ?>" <?= empty($posts_nextoken) ? "disabled" : "" ?>
-                    on="tap:AMP.navigateTo(url='?q=<?= $query ?>&pageToken=<?= $posts_nextoken ?>')">Postingan
+                    on="tap:AMP.navigateTo(url='?pageToken=<?= $posts_nextoken ?>')">Postingan
                     selanjutnya<i class="fa fa-chevron-right ms-md-2"></i></button>
             </div>
         </div>

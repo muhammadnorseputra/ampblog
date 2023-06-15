@@ -9,9 +9,9 @@
         layout="fixed" alt="The Blog"></amp-img>
 
     <div class="me-auto d-none d-md-block w-50">
-        <form class="sample-form" method="POST" action="<?= base_url('search') ?>" target="_top">
+        <form class="sample-form" method="GET" action="<?= base_url('search') ?>" target="_top">
             <div class="input-group">
-                <input type="text" name="query" class="form-control rounded-start-pill ps-4"
+                <input type="text" name="q" class="form-control rounded-start-pill ps-4"
                     placeholder="Search article: type title or labels ..." aria-label="Search"
                     aria-describedby="button-addon2">
                 <button

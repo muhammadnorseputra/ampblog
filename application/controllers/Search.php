@@ -27,15 +27,27 @@ class Search extends CI_Controller
     $this->key = $this->config->item('apikey');
     $this->blog_id = $this->config->item('blog_id');
   }
-  protected function getPost($q) {
-    $fetch = $this->curl->simple_get('https://www.googleapis.com/blogger/v3/blogs/'.$this->blog_id.'/posts/search?q='.$q.'&fetchBodies=false&fetchImages=true&key='.$this->key);
+  protected function getPostSearch($q,$nextpage=null) {
+    $pagetoken = "";
+    if($nextpage !== null) {
+        $pagetoken .= "&pageToken=".$nextpage;
+    }
+
+    $fetch = $this->curl->simple_get('https://www.googleapis.com/blogger/v3/blogs/'.$this->blog_id.'/posts/search?q='.$q.'&fields=nextPageToken,items(id,url,title,labels,published,author(displayName,url,image(url)))&fetchBodies=false&maxResults=1&fetchImages=true&key='.$this->key.$pagetoken);
     return json_decode($fetch);
   }
   public function index()
   {
-    $q = $this->input->post('query');
+    $q = $this->input->get('q');
+    $token = $this->input->get('pageToken');
+
     set_cookie('searchQuery', $q, 1000);
-    $posts = $this->getPost($q);
+    if(isset($token)) {
+      $posts = $this->getPostSearch($q,$token);
+    } else {
+      $posts = $this->getPostSearch($q);
+    }
+    $posts = $this->getPostSearch($q,$token);
 
     if(isset($posts->items) && !empty($q)) {
       $postdata = $posts->items;
@@ -47,11 +59,32 @@ class Search extends CI_Controller
       'content' => 'pages/postingan/search',
       'query' => $q,
       'posts' => $postdata,
-      'posts_nextoken' => isset($posts->nextPageToken)
+      'posts_nextoken' => @$posts->nextPageToken
     ];
     $this->load->view('layouts/app', $data);
   }
 
+  public function label($name) {
+    $token = $this->input->get('pageToken');
+    if(isset($token)) {
+      $posts = getPosts(6,"true","false",$token,$name);
+    } else {
+      $posts = getPosts(6,"true","false",NULL,$name);
+    }
+
+    if(isset($posts->items) && !empty($name)) {
+      $postdata = $posts->items;
+    } else {
+      $postdata = [];
+    }
+    $data = [
+      'content' => 'pages/postingan/labels',
+      'posts' => $postdata,
+      'posts_nextoken' => @$posts->nextPageToken,
+      'posts_label' => $name
+    ];
+    $this->load->view('layouts/app', $data);
+  }
 }
 
 

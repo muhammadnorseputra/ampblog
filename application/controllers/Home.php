@@ -19,18 +19,10 @@ class Home extends CI_Controller {
         ->_display();
     }
 
-    protected function getPost($maxResults=1, $imgSrc="true", $body="true", $nextpage=null) {
-        $pagetoken = "";
-        if($nextpage !== null) {
-            $pagetoken .= "&pageToken=".$nextpage;
-        }
-        $fetch = $this->curl->simple_get('https://www.googleapis.com/blogger/v3/blogs/'.$this->blog_id.'/posts?key='.$this->key.'&status=live&maxResults='.$maxResults.'&fetchImages='.$imgSrc.'&fetchBodies='.$body.$pagetoken);
-        return json_decode($fetch);
-    }
     public function index()
     {
-        $featured = $this->getPost();
-        $posts_list = $this->getPost(7,"true","false");
+        $featured = getFeatured();
+        $posts_list = getPosts(7,"true","false");
         $data = [
             'featured' => $featured->items[0],
             'posts' => $posts_list->items,
@@ -42,7 +34,7 @@ class Home extends CI_Controller {
     }
 
     public function nextpage($next=null) {
-        $posts_list = $this->getPost(6,"true","false",$next);
+        $posts_list = getPosts(6,"true","false",$next);
         $data = [
             'posts' => $posts_list->items,
             'posts_nextoken' => @$posts_list->nextPageToken,
