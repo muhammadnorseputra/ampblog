@@ -16246,4 +16246,28 @@
         overflow: hidden;
     }
     </style>
+    <!-- JSON SCHEMA -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "<?= base_url() ?>",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "<?= base_url() ?>search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "<?= base_url() ?>",
+        "logo": "<?= base_url("assets/img/blog/mediabalangan_mini.png") ?>"
+    }
+    </script>
 </head>

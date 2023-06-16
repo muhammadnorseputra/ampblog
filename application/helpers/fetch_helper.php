@@ -29,7 +29,7 @@ if (!function_exists('getPosts')) {
         if($nextpage !== null) {
             $pagetoken .= "&pageToken=".$nextpage;
         }
-        $url = 'https://www.googleapis.com/blogger/v3/blogs/'.$ci->config->item('blog_id').'/posts?fields=nextPageToken,items(title,id,content,labels,url,published,images(url),author(displayName,url,image(url)))&key='.$ci->config->item('apikey').'&labels='.$labels.'&status=live&maxResults='.$maxResults.'&fetchImages='.$isImage.'&fetchBodies='.$isBody.$pagetoken;
+        $url = 'https://www.googleapis.com/blogger/v3/blogs/'.$ci->config->item('blog_id').'/posts?fields=nextPageToken,items(title,id,content,labels,url,published,updated,images(url),author(displayName,url,image(url)))&key='.$ci->config->item('apikey').'&labels='.$labels.'&status=live&maxResults='.$maxResults.'&fetchImages='.$isImage.'&fetchBodies='.$isBody.$pagetoken;
         $fetch = $ci->curl->simple_get($url);
         
 

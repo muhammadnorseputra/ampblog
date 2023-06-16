@@ -7,24 +7,29 @@
                     <?= $post->title ?>
                 </h1>
                 <div class="flex justify-content-start align-items-center mt-md-2 mb-md-2">
-                        <amp-img alt="<?= $post->author->displayName ?>" src="<?= $post->author->image->url ?>"
-                            layout="fixed" height="30" width="30" placeholder class="circle my2 mr2"> </amp-img>
-                        <span>
-                            <a class="text-decoration-none bold" href="<?= $post->author->url ?>"
-                                target="_blank"><?= $post->author->displayName ?></a>
-                            <br />
-                            <?php
+                    <amp-img alt="<?= $post->author->displayName ?>" src="<?= $post->author->image->url ?>"
+                        layout="fixed" height="30" width="30" placeholder class="circle my2 mr2"> </amp-img>
+                    <span>
+                        <a class="text-decoration-none bold" href="<?= $post->author->url ?>"
+                            target="_blank"><?= $post->author->displayName ?></a>
+                        <br />
+                        <?php
                         $utc = strtotime($post->published.' UTC');
                         $datepost = formatTgl(date("Y-m-d", $utc));
                     ?>
-                            <small><i class="fa fa-calendar"></i> <?= $datepost ?> <?= readTime($featured_content) ?></small> 
-                        </span>
-                        <div class="ms-auto d-flex justify-content=around align-items-center gap-2">
-                        <span>Share: </span> 
-                        <amp-social-share class="rounded-circle" aria-label="Share on WhatsApp" type="whatsapp" width="30" height="30"></amp-social-share>
-                        <amp-social-share class="rounded-circle" aria-label="Share on Facebook" type="facebook" width="30" height="30"></amp-social-share>
-                        <amp-social-share class="rounded-circle" aria-label="Share on Twitter" type="twitter" width="30" height="30"></amp-social-share>  
-                        <amp-social-share class="rounded-circle" aria-label="Share by email " type="email" width="30" height="30"></amp-social-share>
+                        <small><i class="fa fa-calendar"></i> <?= $datepost ?>
+                            <?= readTime($featured_content) ?></small>
+                    </span>
+                    <div class="ms-auto d-flex justify-content=around align-items-center gap-2">
+                        <span>Share: </span>
+                        <amp-social-share class="rounded-circle" aria-label="Share on WhatsApp" type="whatsapp"
+                            width="30" height="30"></amp-social-share>
+                        <amp-social-share class="rounded-circle" aria-label="Share on Facebook" type="facebook"
+                            width="30" height="30"></amp-social-share>
+                        <amp-social-share class="rounded-circle" aria-label="Share on Twitter" type="twitter" width="30"
+                            height="30"></amp-social-share>
+                        <amp-social-share class="rounded-circle" aria-label="Share by email " type="email" width="30"
+                            height="30"></amp-social-share>
                     </div>
                 </div>
                 <?= $featured_content ?>
@@ -32,3 +37,18 @@
         </div>
     </div>
 </div>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "<?= $post->title ?>",
+    "image": "<?= fetchImage($post->id) ?>",
+    "datePublished": "<?= $post->published ?>",
+    "dateModified": "<?= $post->updated ?>",
+    "author": {
+        "@type": "Person",
+        "name": "<?= $post->author->displayName ?>",
+        "url": "<?= $post->author->url ?>"
+    }
+}
+</script>
