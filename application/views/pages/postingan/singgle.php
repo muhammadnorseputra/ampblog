@@ -52,3 +52,39 @@
     }
 }
 </script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "<?= base_url() ?>"
+    }, {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "<?= $post->labels[0] ?>",
+        "item": "<?= base_url('search/label/'.$post->labels[0]) ?>"
+    }, {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "<?= $post->title ?>"
+    }]
+}
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "ImageObject",
+      "contentUrl": "<?= fetchImage($post->id) ?>",
+      "license": "<?= base_url('page/1252667274665359714') ?>",
+      "acquireLicensePage": "<?= base_url('page/1252667274665359714') ?>",
+      "creditText": "<?= $this->config->item('blog_name') ?>",
+      "creator": {
+        "@type": "Person",
+        "name": "<?= $post->author->displayName ?>"
+       },
+      "copyrightNotice": "<?= $this->config->item('blog_name') ?>"
+    }
+    </script>

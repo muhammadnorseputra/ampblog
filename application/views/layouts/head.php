@@ -1,13 +1,26 @@
 <!DOCTYPE html>
-<html ⚡="" lang="id">
+<html ⚡="" lang="id" dir='ltr'>
 
 <head>
     <meta charset="utf-8" />
+    
     <!-- Primary Meta Tags -->
     <title><?= isset($title) ? $title : "⚡ Home" ?> - <?= $this->config->item('blog_name') ?></title>
     <meta name="title" content="<?= $this->config->item('blog_name') ?>" />
     <meta name="description" content="<?= $this->config->item('blog_desc') ?>" />
-    <link href="<?= base_url('assets/img/blog/favicon.ico') ?>" rel="icon" type="image/x-icon" />
+    <meta content='media balangan, media center balangan, bedia, teknologi, pendidikan, blogger, adsense, pengetahuan, tips dan trik, cara-cara, belajar, tutorial' name='keywords'/>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+    <meta content='max-image-preview:large' name='robots'/>
+    
+    <link rel="canonical" href="<?= current_url() ?>" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
+    <meta name="amp-google-client-id-api" content="googleanalytics" />
+    
+    <!--[ Favicon ]-->
+    <link href='<?= base_url('assets/img/blog/favicon.ico') ?>' rel='apple-touch-icon' sizes='120x120'/>
+    <link href='<?= base_url('assets/img/blog/favicon.ico') ?>' rel='apple-touch-icon' sizes='152x152'/>
+    <link href='<?= base_url('assets/img/blog/favicon.ico') ?>' rel="icon" type="image/x-icon" />
+    <link href='<?= base_url('assets/img/blog/favicon.ico') ?>' rel='shortcut icon' type='image/x-icon'/>
 
     <!-- Open Graph / Facebook -->
     <meta content="id_ID" property="og:locale" />
@@ -39,9 +52,12 @@
         content="<?= isset($og['title']) ? $og['title'] ." - ". $this->config->item('blog_name') : $this->config->item('blog_name') ?>"
         property="twitter:image:alt" />
 
-    <link rel="canonical" href="<?= current_url() ?>" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
-    <meta name="amp-google-client-id-api" content="googleanalytics" />
+    <!--[ Theme Color ]-->
+    <meta content='#0b57cf' name='theme-color'/>
+    <meta content='#0b57cf' name='msapplication-navbutton-color'/>
+    <meta content='#0b57cf' name='apple-mobile-web-app-status-bar-style'/>
+    <meta content='true' name='apple-mobile-web-app-capable'/>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
