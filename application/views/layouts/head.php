@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <!-- Primary Meta Tags -->
-    <title><?= isset($title) ? $title : "⚡ Home" ?> - <?= $this->config->item('blog_name') ?></title>
+    <title><?= isset($title) ? $title : "Home" ?> - ⚡ <?= $this->config->item('blog_name') ?></title>
     <meta name="title" content="<?= $this->config->item('blog_name') ?>" />
     <meta name="description" content="<?= $this->config->item('blog_desc') ?>" />
     <link href="<?= base_url('assets/img/blog/favicon.ico') ?>" rel="icon" type="image/x-icon" />
