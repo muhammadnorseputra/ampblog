@@ -2,6 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 // Don't forget include/define REST_Controller path
 
+use magyarandras\AMPConverter\Converter;
 /**
  *
  * Controller Pages
@@ -28,6 +29,11 @@ class Pages extends CI_Controller
 
   public function page($id)
   {
+    $converter = new Converter();
+
+    //Load built-in converters
+    $converter->loadDefaultConverters();
+
     $detail = getPage($id);
     $og = [
       'type' => 'article',
@@ -44,10 +50,11 @@ class Pages extends CI_Controller
       'desc' => headlineText($detail->content,200),
       'image' => 'https://1.bp.blogspot.com/-E250bQMM8tk/XomH5DdorOI/AAAAAAAAPY8/SCYwi79WjckWC8wHKK7OblI82BpT9JquACNcBGAsYHQ/s1600/jagotheme-img.png'
     ];
-    
+    $amphtml = $converter->convert($detail->content);
     $data = [
       'title' => $detail->title,
       'd' => $detail,
+      'ampcontent' => $amphtml,
       'content' => 'pages/halaman/index',
       'og' => $og,
       'tw' => $tw

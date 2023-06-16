@@ -30,7 +30,7 @@
                             height="30"></amp-social-share>
                     </div>
                 </div>
-                <?= $d->content ?>
+                <?= $ampcontent ?>
             </article>
         </div>
     </div>
