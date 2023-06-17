@@ -5,24 +5,25 @@
         class="ampstart-navbar-trigger pr2">
         ☰
     </div>
-    <amp-img class="me-auto" src="<?= base_url("assets/img/blog/mediabalangan.png") ?>" width="150" height="40"
-        layout="fixed" alt="The Blog"></amp-img>
-
+    <a href="<?= base_url() ?>" class="me-auto mt-2">
+        <amp-img class="pThumb" src="<?= base_url("assets/img/blog/mediabalangan.png") ?>" width="180" height="50"
+            layout="intrinsic" alt="The Blog"></amp-img>
+    </a>
     <div class="mx-auto d-none d-md-block w-25">
         <form class="sample-form" method="GET" action="<?= base_url('search') ?>" target="_top">
             <div class="input-group">
                 <input type="text" name="q" class="form-control rounded-start-pill ps-4"
                     placeholder="Search article: type title or labels ..." aria-label="Search"
-                    aria-describedby="button-addon2">
+                    aria-describedby="buttonSearch">
                 <button
                     class="btn btn-outline-secondary rounded-start-0 rounded-end-pill d-flex justify-content-between align-items-center gap-2"
-                    type="submit" id="button-addon2"><i class="fa fa-search mr-2"></i> <span class="d-none d-md-block">
+                    type="submit" id="buttonSearch"><i class="fa fa-search mr-2"></i> <span class="d-none d-md-block">
                         Search</span></button>
             </div>
         </form>
     </div>
     <div>
-        <button class="btn btn-success rounded-circle text-white" role="button" type="button"><i
+        <button class="btn btn-success rounded-circle text-white" role="button" aria-label="Person" type="button"><i
                 class="fa fa-user"></i></button>
     </div>
 </header>

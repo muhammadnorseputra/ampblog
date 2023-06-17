@@ -14,13 +14,13 @@
             
     ?>
         <div class="col-md-4">
-            <article class="article bg-white border shadow-sm p-md-3 p-2 mb-3 rounded-3">
+            <article class="article">
                 <div class="flex flex-column justify-between">
                     <div class="article-description flex justify-start flex-column">
                         <div>
                             <a href="<?= base_url(urlWithoutDomain($p->url)) ?>">
                                 <amp-img alt="<?= $p->title ?>" src="<?= fetchImage($p->id) ?>" layout="responsive"
-                                    height="190" width="320" placeholder class="rounded mb-3 border">
+                                    height="312" width="600" placeholder class="rounded mb-3 border pThumb">
                                 </amp-img>
                             </a>
                         </div>
@@ -65,7 +65,8 @@
     <div class="row">
         <div class="container text-center mt-5">
             <div class="d-flex flex-row justify-between">
-                <button class="btn btn-success" on="tap:AMP.goBack(navigate=true)"><i class="fa fa-chevron-left me-md-2"></i>Postingan
+                <button class="btn btn-success" on="tap:AMP.goBack(navigate=true)"><i
+                        class="fa fa-chevron-left me-md-2"></i>Postingan
                     sebelumnya</button>
                 <a rel="nofollow noopener" href="<?= base_url('index.php') == current_url() ? "#" : base_url() ?>"
                     class="btn btn-sm btn-rounded <?= base_url('index.php') == current_url() ? "btn-secondary text-mutted" : "btn-success text-warning" ?> px-3 py-2">
@@ -75,7 +76,8 @@
                     class="btn btn-sm btn-rounded btn-success px-4 py-2 text-warning">
                     Muat postingan selanjutnya
                 </a> -->
-                <button class="btn <?= empty($posts_nextoken) ? "btn-secondary" : "btn-success" ?>" <?= empty($posts_nextoken) ? "disabled" : "" ?>
+                <button class="btn <?= empty($posts_nextoken) ? "btn-secondary" : "btn-success" ?>"
+                    <?= empty($posts_nextoken) ? "disabled" : "" ?>
                     on="tap:AMP.navigateTo(url='?pageToken=<?= $posts_nextoken ?>')">Postingan
                     selanjutnya<i class="fa fa-chevron-right ms-md-2"></i></button>
             </div>

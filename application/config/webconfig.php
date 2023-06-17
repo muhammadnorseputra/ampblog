@@ -1,5 +1,4 @@
 <?php
-
 // BLOG KEYS
 $config['apikey'] = 'AIzaSyBMgrvqLoK_LKur-HfdQpGc90Bo2lYXdi8';
 $config['blog_id'] = '7792147091805313605';
