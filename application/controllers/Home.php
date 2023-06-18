@@ -6,7 +6,7 @@ class Home extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->output->cache(1);
+        // $this->output->cache(1);
         $this->key = $this->config->item('apikey');
         $this->blog_id = $this->config->item('blog_id');
     }

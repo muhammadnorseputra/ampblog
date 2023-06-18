@@ -25,7 +25,7 @@ class Posts extends CI_Controller
   public function __construct()
   {
     parent::__construct();
-    $this->output->cache(1);
+    // $this->output->cache(1);
   }
 
   protected function getPost($path)

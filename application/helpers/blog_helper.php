@@ -56,7 +56,7 @@ if (!function_exists('tags')) {
     function tags($tag,$varian="success",$styleOption="")
     {
         $body = '<div class="d-flex justify-content-start align-items-center gap-2 mb-2">';
-        $body .= '<i class="fa fa-tags mr-2"></i>';
+        // $body .= '<i class="fa fa-tags mr-2"></i>';
         foreach($tag as $label):
             $body .= '<button class="btn btn-'.$varian.' '.$styleOption.' d-flex flex-row justify-content-between align-items-center" on="tap:AMP.navigateTo(url=\''.base_url('search/label/'.$label).'\')">
             <span> '.$label.'</span></button>';

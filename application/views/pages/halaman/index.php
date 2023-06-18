@@ -5,7 +5,7 @@
                 <h1 class="fs-3 fw-bold lh-sm text-black mt-4 mb-2">
                     <?= $d->title ?>
                 </h1>
-                <div class="flex justify-content-start align-items-center mt-md-2 mb-md-2">
+                <div class="d-flex justify-content-start align-items-center mt-md-2 pb-md-3 border-bottom border-light-subtle">
                     <amp-img alt="<?= $d->author->displayName ?>" src="<?= $d->author->image->url ?>" layout="fixed"
                         height="30" width="30" placeholder class="circle my2 mr2"> </amp-img>
                     <span>

@@ -1,5 +1,17 @@
+<section class="labels">
+    <div class="d-flex justify-content-start align-items-center mw-100 overflow-y-hidden overflow-x-auto pb-3 gap-3 ">
+        <button role="button" aria-label="button" on="tap:AMP.navigateTo(url='search/label/Html')" title="HTML5" class="btn btn-secondary bg-secondary-subtle border-0 text-secondary rounded">HTML5</button>
+        <button role="button" aria-label="button" on="tap:AMP.navigateTo(url='search/label/Javascript')" title="Javascript" class="btn btn-secondary bg-secondary-subtle border-0 text-secondary rounded">Javascript</button>
+        <button role="button" aria-label="button" on="tap:AMP.navigateTo(url='search/label/PHP')" title="PHP" class="btn btn-secondary bg-secondary-subtle border-0 text-secondary rounded">PHP</button>
+        <button role="button" aria-label="button" on="tap:AMP.navigateTo(url='search/label/Teknologi')" title="Teknologi" class="btn btn-secondary bg-secondary-subtle border-0 text-secondary rounded">Teknologi</button>
+        <button role="button" aria-label="button" on="tap:AMP.navigateTo(url='search/label/Balangan')" title="Balangan" class="btn btn-secondary bg-secondary-subtle border-0 text-secondary rounded">Balangan</button>
+        <button role="button" aria-label="button" on="tap:AMP.navigateTo(url='search/label/Blogger')" title="Blogger" class="btn btn-secondary bg-secondary-subtle border-0 text-secondary rounded">Blogger</button>
+        <button role="button" aria-label="button" on="tap:AMP.navigateTo(url='search/label/Adsense')" title="Adsense" class="btn btn-secondary bg-secondary-subtle border-0 text-secondary rounded">Adsense</button>
+        
+    </div>
+</section>
 <section class="featured mb-5">
-    <article class="article p-3 p-md-5 rounded-3 bg-dark text-white shadow">
+    <article class="article p-3 p-md-5 rounded-3 bg-dark bg-gradient text-white shadow">
         <div class="flex flex-md-row flex-column justify-between">
             <div>
                 <a href="<?= base_url(urlWithoutDomain($featured->url)) ?>" class="relative">
@@ -102,7 +114,7 @@
                         </a>
                     </div>
                     <div class="article-description flex justify-start flex-column">
-                        <?= tags($p->labels, "outline-secondary", "rounded-pill px-2 py-0") ?>
+                        <?= tags($p->labels, "secondary", "bg-secondary-subtle border-0 py-1 text-secondary rounded-pill") ?>
                         <h2 class="fs-6 fw-bold lh-sm mt-2 mb-3 px-md-0 px-2"><a
                                 href="<?= base_url(urlWithoutDomain($p->url)) ?>"
                                 class="text-decoration-none line-clamp"><?= $p->title ?></a></h2>
@@ -125,7 +137,7 @@
                         ?>
                                 <small><?= $datepost ?></small>
                             </span>
-                            <a class="text-decoration-none bold ml-auto border p1"
+                            <a class="text-decoration-none bold ml-auto border p1 rounded"
                                 href="<?= base_url(urlWithoutDomain($p->url)) ?>">Readmore <i
                                     class="fa fa-chevron-right ms-1"></i></a>
                         </div>
