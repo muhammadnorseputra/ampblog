@@ -16,6 +16,24 @@ if (!function_exists('fetchImage')) {
     }
 }
 
+if (!function_exists('fetchCommnets')) {
+
+    /**
+     * fetchCommnets
+     * 
+     *  @return bool  */
+    function fetchCommnets($postID)
+    {
+        $ci = get_instance();
+        $fields = 'items(id,published,updated,content,author(displayName,image(url)))';
+        $url = 'https://www.googleapis.com/blogger/v3/blogs/'.$ci->config->item('blog_id').'/posts/'.$postID.'/comments/?key='.$ci->config->item('apikey').'&fields='.$fields;
+        $fetch = $ci->curl->simple_get($url);
+
+        $result = json_decode($fetch);
+        return $result;
+    }
+}
+
 if (!function_exists('getPosts')) {
 
     /**
@@ -29,7 +47,7 @@ if (!function_exists('getPosts')) {
         if($nextpage !== null) {
             $pagetoken .= "&pageToken=".$nextpage;
         }
-        $url = 'https://www.googleapis.com/blogger/v3/blogs/'.$ci->config->item('blog_id').'/posts?fields=nextPageToken,items(title,id,content,labels,url,published,updated,images(url),author(displayName,url,image(url)))&key='.$ci->config->item('apikey').'&labels='.$labels.'&status=live&maxResults='.$maxResults.'&fetchImages='.$isImage.'&fetchBodies='.$isBody.$pagetoken;
+        $url = 'https://www.googleapis.com/blogger/v3/blogs/'.$ci->config->item('blog_id').'/posts?fields=nextPageToken,items(title,id,content,labels,url,published,updated,images(url),replies(totalItems),author(displayName,url,image(url)))&key='.$ci->config->item('apikey').'&labels='.$labels.'&status=live&maxResults='.$maxResults.'&fetchImages='.$isImage.'&fetchBodies='.$isBody.$pagetoken;
         $fetch = $ci->curl->simple_get($url);
         
 
@@ -47,7 +65,7 @@ if (!function_exists('getFeatured')) {
     function getFeatured()
     {
         $ci = get_instance();
-        $url = 'https://www.googleapis.com/blogger/v3/blogs/'.$ci->config->item('blog_id').'/posts?key='.$ci->config->item('apikey').'&status=live&maxResults=1&fetchImages=true&fetchBodies=true&fields=items(title,content,labels,url,published,updated,images(url),author(displayName,url,image(url)))';
+        $url = 'https://www.googleapis.com/blogger/v3/blogs/'.$ci->config->item('blog_id').'/posts?key='.$ci->config->item('apikey').'&status=live&maxResults=1&fetchImages=true&fetchBodies=true&fields=items(title,content,labels,url,published,updated,images(url),replies(totalItems),author(displayName,url,image(url)))';
         $fetch = $ci->curl->simple_get($url);
 
         $result = json_decode($fetch);

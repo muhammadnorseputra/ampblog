@@ -55,7 +55,7 @@ if (!function_exists('tags')) {
 
     function tags($tag,$varian="success",$styleOption="")
     {
-        $body = '<div class="d-flex justify-content-start align-items-center gap-2 mb-2">';
+        $body = '<div class="d-flex justify-content-start align-items-center gap-2 mb-2 text-truncate overflow-x-auto">';
         // $body .= '<i class="fa fa-tags mr-2"></i>';
         foreach($tag as $label):
             $body .= '<button class="btn btn-'.$varian.' '.$styleOption.' d-flex flex-row justify-content-between align-items-center" on="tap:AMP.navigateTo(url=\''.base_url('search/label/'.$label).'\')">
@@ -78,6 +78,14 @@ if (!function_exists('readTime')) {
         //     'seconds' => $seconds
         // );
 
-        return "<i class='fa fa-clock-o mx-2'></i>".$minutes ." min"." ".$seconds." sec, reading";
+        return "<i class='fa fa-clock-o mx-2'></i>".$minutes ." min reading";
+    }
+}
+
+if (!function_exists('countComments')) {
+    function countComments($comment) {
+        if($comment != 0) {
+            return '<span class="p-2 rounded bg-white text-dark shadow-sm count-comments"><i class="fa fa-comments mr-1"></i> '.$comment.'</span>';
+        }
     }
 }

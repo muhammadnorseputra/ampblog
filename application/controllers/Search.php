@@ -24,7 +24,7 @@ class Search extends CI_Controller
   public function __construct()
   {
     parent::__construct();
-    $this->output->cache(10);
+    // $this->output->cache(10);
     $this->key = $this->config->item('apikey');
     $this->blog_id = $this->config->item('blog_id');
   }
@@ -34,7 +34,7 @@ class Search extends CI_Controller
         $pagetoken .= "&pageToken=".$nextpage;
     }
 
-    $fetch = $this->curl->simple_get('https://www.googleapis.com/blogger/v3/blogs/'.$this->blog_id.'/posts/search?q='.$q.'&fields=nextPageToken,items(id,url,title,labels,published,author(displayName,url,image(url)))&fetchBodies=false&maxResults=1&fetchImages=true&key='.$this->key.$pagetoken);
+    $fetch = $this->curl->simple_get('https://www.googleapis.com/blogger/v3/blogs/'.$this->blog_id.'/posts/search?q='.$q.'&fields=nextPageToken,items(id,url,title,labels,published,replies(totalItems),author(displayName,url,image(url)))&fetchBodies=false&maxResults=1&fetchImages=true&key='.$this->key.$pagetoken);
     return json_decode($fetch);
   }
   public function index()

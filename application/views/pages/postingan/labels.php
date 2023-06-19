@@ -24,11 +24,11 @@
                                 </amp-img>
                             </a>
                         </div>
-                        <h3 class="fs-6 fw-bold lh-sm mt-2 mb-md-3 mb-2 px-3 px-md-0"><a
+                        <h3 class="fs-6 fw-bold lh-sm mt-2 mb-md-3 mb-2"><a
                                 href="<?= base_url(urlWithoutDomain($p->url)) ?>"
                                 class="text-decoration-none line-clamp"><?= highlight_phrase($p->title, $posts_label, '<span class="text-success">', '</span>') ?></a>
                         </h3>
-                        <div class="flex justify-start items-center mt-md-2 mb-md-2 mb-4 px-3 px-md-0">
+                        <div class="flex justify-start items-center mt-md-2 mb-md-2 mb-4">
                             <amp-img alt="<?= $p->author->displayName ?>" src="<?= $p->author->image->url ?>"
                                 layout="fixed" height="30" width="30" placeholder class="circle my2 mr2"> </amp-img>
                             <span>
@@ -41,8 +41,9 @@
                         ?>
                                 <small><?= $datepost ?></small>
                             </span>
-                            <a class="text-decoration-none bold ml-auto border p1"
-                                href="<?= base_url(urlWithoutDomain($p->url)) ?>">Readmore</a>
+                            <a class="text-decoration-none bold ml-auto border p1 rounded"
+                                href="<?= base_url(urlWithoutDomain($p->url)) ?>">Readmore <i
+                                    class="fa fa-chevron-right ms-1"></i></a>
                         </div>
 
 
@@ -66,8 +67,8 @@
         <div class="container text-center mt-5">
             <div class="d-flex flex-row justify-between">
                 <button class="btn btn-success" on="tap:AMP.goBack(navigate=true)"><i
-                        class="fa fa-chevron-left me-md-2"></i>Postingan
-                    sebelumnya</button>
+                        class="fa fa-chevron-left me-md-2"></i><span class="d-none d-md-block">Postingan
+                    sebelumnya</span></button>
                 <a rel="nofollow noopener" href="<?= base_url('index.php') == current_url() ? "#" : base_url() ?>"
                     class="btn btn-sm btn-rounded <?= base_url('index.php') == current_url() ? "btn-secondary text-mutted" : "btn-success text-warning" ?> px-3 py-2">
                     <div class="fa fa-home"></div>
@@ -78,8 +79,8 @@
                 </a> -->
                 <button class="btn <?= empty($posts_nextoken) ? "btn-secondary" : "btn-success" ?>"
                     <?= empty($posts_nextoken) ? "disabled" : "" ?>
-                    on="tap:AMP.navigateTo(url='?pageToken=<?= $posts_nextoken ?>')">Postingan
-                    selanjutnya<i class="fa fa-chevron-right ms-md-2"></i></button>
+                    on="tap:AMP.navigateTo(url='?pageToken=<?= $posts_nextoken ?>')"><span class="d-none d-md-block">Postingan
+                    selanjutnya</span><i class="fa fa-chevron-right ms-md-2"></i></button>
             </div>
         </div>
     </div>
