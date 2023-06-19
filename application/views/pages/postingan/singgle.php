@@ -41,17 +41,16 @@
                             height="30"></amp-social-share>
                     </div>
                 </div>
-                <amp-script layout="container" src="<?= base_url("assets/js/toc.js") ?>">
-                <?php
-                    $filters = array(
-                        "www.mediabalangan.com" => "m.mediabalangan.com"
-                    );
-                    $paragraf_baru = str_replace(array_keys($filters), array_values($filters), $featured_content); 
-                    echo $paragraf_baru;
-                ?>
-                </amp-script>
+                        <?php
+                            $filters = array(
+                                "www.mediabalangan.com" => "m.mediabalangan.com"
+                            );
+                            $paragraf_baru = str_replace(array_keys($filters), array_values($filters), $featured_content); 
+                            echo $paragraf_baru;
+                        ?>
                 <hr>
             </article>
+            
         </div>
     </div>
     <div class="row">

@@ -36,12 +36,12 @@
                         class="fa fa-home text-secondary fs-6"></i>
                     <span>Beranda</span></a>
             </li>
-            <li class="ampstart-nav-item ampstart-nav-dropdown relative border-top">
+            <li class="ampstart-nav-item ampstart-nav-dropdown relative border-top py-0 my-0">
                 <!-- Start Dropdown-inline -->
                 <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown">
                     <section>
                         <header class="bold">Pemoggraman</header>
-                        <ul class="ampstart-dropdown-items list-reset m0 p0">
+                        <ul class="ampstart-dropdown-items list-reset">
                             <li class="ampstart-dropdown-item">
                                 <a href="<?= base_url('search/label/Html') ?>" class="text-decoration-none">HTML 5</a>
                             </li>
@@ -56,7 +56,7 @@
                 </amp-accordion>
                 <!-- End Dropdown-inline -->
             </li>
-            <li class="ampstart-nav-item ampstart-nav-dropdown relative">
+            <li class="ampstart-nav-item ampstart-nav-dropdown relative py-0 my-0">
                 <!-- Start Dropdown-inline -->
                 <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown">
                     <section>
@@ -73,7 +73,7 @@
                 </amp-accordion>
                 <!-- End Dropdown-inline -->
             </li>
-            <li class="ampstart-nav-item ampstart-nav-dropdown relative border-bottom">
+            <li class="ampstart-nav-item ampstart-nav-dropdown relative border-bottom py-0 my-0">
                 <!-- Start Dropdown-inline -->
                 <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown">
                     <section>
