@@ -12,7 +12,7 @@
     </div>
 </section>
 <section class="featured mb-5">
-    <article class="article py-3 px-3 px-md-5 rounded-3 bg-dark bg-gradient text-white shadow">
+    <article class="article py-3 px-3 px-md-5 py-md-5 rounded-3 bg-dark bg-gradient text-white shadow">
         <div class="d-flex flex-sm-column flex-md-row flex-lg-row flex-xl-row flex-column justify-content-between">
             <div>
                 <a href="<?= base_url(urlWithoutDomain($featured->url)) ?>" class="position-relative">
