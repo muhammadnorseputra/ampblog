@@ -1,4 +1,6 @@
 .DS_Store
+.cpanel.yml
+vendor/
 
 application/cache/*
 !application/cache/index.html
