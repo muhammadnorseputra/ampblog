@@ -94,8 +94,10 @@
             foreach($this->config->item('pages_data') as $p): 
           ?>
             <li class="ampstart-nav-item">
-                <a class="ampstart-nav-link"
-                    href="<?= base_url('page/'.$p->id) ?>"><?= ucwords($p->title) ?></a>
+                <!-- <a class="ampstart-nav-link"
+                    href="<?= base_url('page/'.$p->id) ?>"><?= ucwords($p->title) ?></a> -->
+                    <a class="ampstart-nav-link"
+                    href="<?= urlWithoutDomain($p->url) ?>?id=<?= $p->id ?>"><?= ucwords($p->title) ?></a>
             </li>
             <?php endforeach; ?>
         </ul>

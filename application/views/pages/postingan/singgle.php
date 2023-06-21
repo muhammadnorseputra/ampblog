@@ -46,13 +46,22 @@
                                 "www.mediabalangan.com" => "m.mediabalangan.com"
                             );
                             $paragraf_baru = str_replace(array_keys($filters), array_values($filters), $featured_content); 
-                            echo $paragraf_baru;
                         ?>
+                        <amp-script src="<?= base_url("assets/js/toc.js") ?>" layout="container">
+                            <?= $paragraf_baru; ?>
+                        </amp-script>
                 <hr>
             </article>
             
         </div>
     </div>
+    <!-- Section Next / Prev Article -->
+    <!-- <div class="row">
+        <div class="col-md-10 offset-lg-1 mt-3">
+                            
+        </div>
+    </div> -->
+    <!-- Section Comments -->
     <div class="row">
         <div class="col-md-10 offset-lg-1 mt-3 border px-3 py-4 rounded">
             <h4 class="fs-5 fw-bold">Comments</h4>

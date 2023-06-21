@@ -28,8 +28,44 @@ class Pages extends CI_Controller
     // $this->output->cache(1);
   }
 
-  public function page($id)
+  // public function page($id)
+  // {
+  //   $converter = new Converter();
+
+  //   //Load built-in converters
+  //   $converter->loadDefaultConverters();
+
+  //   $detail = getPage($id);
+  //   $og = [
+  //     'type' => 'article',
+  //     'url' => base_url('page/'.$id),
+  //     'title' => $detail->title,
+  //     'desc' => headlineText($detail->content,200),
+  //     'image' => 'https://1.bp.blogspot.com/-E250bQMM8tk/XomH5DdorOI/AAAAAAAAPY8/SCYwi79WjckWC8wHKK7OblI82BpT9JquACNcBGAsYHQ/s1600/jagotheme-img.png'
+  //   ];
+
+  //   $tw = [
+  //     'type' => 'summary',
+  //     'url' => base_url('page/'.$id),
+  //     'title' => $detail->title,
+  //     'desc' => headlineText($detail->content,200),
+  //     'image' => 'https://1.bp.blogspot.com/-E250bQMM8tk/XomH5DdorOI/AAAAAAAAPY8/SCYwi79WjckWC8wHKK7OblI82BpT9JquACNcBGAsYHQ/s1600/jagotheme-img.png'
+  //   ];
+  //   $amphtml = $converter->convert($detail->content);
+  //   $data = [
+  //     'title' => $detail->title,
+  //     'd' => $detail,
+  //     'ampcontent' => $amphtml,
+  //     'content' => 'pages/halaman/index',
+  //     'og' => $og,
+  //     'tw' => $tw
+  //   ];
+  //   $this->load->view('layouts/app', $data);
+  // }
+
+  public function p($path)
   {
+    $id = $this->input->get('id');
     $converter = new Converter();
 
     //Load built-in converters
