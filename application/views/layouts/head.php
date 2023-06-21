@@ -14,7 +14,6 @@
 
     <link rel="canonical" href="<?= current_url() ?>" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
-    <meta name="amp-google-client-id-api" content="googleanalytics" />
     <link href="<?= current_url() ?>" hreflang="x-default" rel="alternate" />
 
     <!--[ Favicon ]-->
@@ -73,66 +72,11 @@
 
     <script async="" src="https://cdn.ampproject.org/v0.js"></script>
 
-    <style amp-boilerplate="">
-        body {
-            -webkit-animation: 8s steps(1, end) both -amp-start;
-            -moz-animation: 8s steps(1, end) both -amp-start;
-            -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-            animation: 8s steps(1, end) both -amp-start
-        }
-
-        @-webkit-keyframes -amp-start {
-            from {
-                visibility: hidden
-            }
-
-            to {
-                visibility: visible
-            }
-        }
-
-        @-moz-keyframes -amp-start {
-            from {
-                visibility: hidden
-            }
-
-            to {
-                visibility: visible
-            }
-        }
-
-        @-ms-keyframes -amp-start {
-            from {
-                visibility: hidden
-            }
-
-            to {
-                visibility: visible
-            }
-        }
-
-        @-o-keyframes -amp-start {
-            from {
-                visibility: hidden
-            }
-
-            to {
-                visibility: visible
-            }
-        }
-
-        @keyframes -amp-start {
-            from {
-                visibility: hidden
-            }
-
-            to {
-                visibility: visible
-            }
-        }
+    <style amp-boilerplate>
+        body{-webkit-animation:8s steps(1,end) both -amp-start;-moz-animation:8s steps(1,end) both -amp-start;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:8s steps(1,end) both -amp-start}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
     </style>
     <noscript>
-        <style amp-boilerplate="">
+        <style amp-boilerplate>
             body {
                 -webkit-animation: none;
                 -moz-animation: none;
@@ -194,7 +138,7 @@
             "logo": "https://lh3.googleusercontent.com/ZXvWeA-BxPxqoRyXhn-PSWYD7XwKInpIy4Vy0KU1OiHfLT1vRvpWh_OnSIZKSqZuGRaSK9g9R0E"
         }
     </script>
-    <style amp-custom="">
+    <style amp-custom>
          /*!
  * Bootstrap  v5.3.0 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors
