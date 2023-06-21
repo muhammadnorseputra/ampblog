@@ -13,7 +13,7 @@
 </section>
 <section class="featured mb-5">
     <article class="article p-3 p-md-5 rounded-3 bg-dark bg-gradient text-white shadow">
-        <div class="flex flex-md-row flex-column justify-between">
+        <div class="d-flex flex-md-row flex-column justify-content-between">
             <div>
                 <a href="<?= base_url(urlWithoutDomain($featured->url)) ?>" class="position-relative">
                     <amp-img alt="<?= $featured->title ?>" src="<?= $featured->images[0]->url ?>" layout="intrinsic"
@@ -25,7 +25,7 @@
                     <?= countComments($featured->replies->totalItems) ?>
                 </a>
             </div>
-            <div class="article-description mt-4 mt-md-0 ms-md-5 flex justify-start flex-column">
+            <div class="article-description mt-4 mt-md-0 ms-md-5 d-flex justify-content-start flex-column">
                 <?= tags($featured->labels,"success","rounded-pill px-3 py-1") ?>
                 <h1 class="ampstart-title-sm bold fs-4 lh-sm"><a
                         href="<?= base_url(urlWithoutDomain($featured->url)) ?>"
@@ -33,7 +33,7 @@
                 <p class="mt2 text-secondary">
                     <?= headlineText($featured->content, 190) ?> ...
                 </p>
-                <div class="flex justify-start items-center my2">
+                <div class="d-flex justify-cotnent-start align-items-center my-2">
                     <amp-img alt="<?= $featured->author->displayName ?>" src="<?= $featured->author->image->url ?>"
                         layout="fixed" height="30" width="30" placeholder class="circle my2 mr2"> </amp-img>
                     <span>
