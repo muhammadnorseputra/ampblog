@@ -1,5 +1,6 @@
 .DS_Store
-.cpanel.yml
+
+#WAJIB JALANANKAN MANUAL DI SERVER
 vendor/
 
 application/cache/*
