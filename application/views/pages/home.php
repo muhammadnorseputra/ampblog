@@ -12,12 +12,12 @@
     </div>
 </section>
 <section class="featured mb-5">
-    <article class="article p-3 p-md-5 rounded-3 bg-dark bg-gradient text-white shadow">
-        <div class="d-flex flex-md-row flex-column justify-content-between">
+    <article class="article py-3 px-3 px-md-5 rounded-3 bg-dark bg-gradient text-white shadow">
+        <div class="d-flex flex-sm-column flex-md-row flex-lg-row flex-xl-row flex-column justify-content-between">
             <div>
                 <a href="<?= base_url(urlWithoutDomain($featured->url)) ?>" class="position-relative">
-                    <amp-img alt="<?= $featured->title ?>" src="<?= $featured->images[0]->url ?>" layout="intrinsic"
-                        height="680" width="900" placeholder class="rounded pThumb">
+                    <amp-img alt="<?= $featured->title ?>" src="<?= $featured->images[0]->url ?>" layout="responsive"
+                        height="630" width="1200" placeholder class="rounded pThumb">
                         <amp-img alt="AMP Fallback" fallback width="600" height="412" class="rounded pThumb"
                             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSAiaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmlld0JveD0iMSAxIDggNCI+PGltYWdlIGZpbHRlcj0idXJsKCNibHVyKSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjYiIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBQW9BQUFBR0NBWUFBQUQ2OEEvR0FBQUFBWE5TUjBJQXJzNGM2UUFBQUVSbFdFbG1UVTBBS2dBQUFBZ0FBWWRwQUFRQUFBQUJBQUFBR2dBQUFBQUFBNkFCQUFNQUFBQUJBQUVBQUtBQ0FBUUFBQUFCQUFBQUNxQURBQVFBQUFBQkFBQUFCZ0FBQUFEK2lGWDBBQUFBcjBsRVFWUUlIVDJQU1FxRlFBeEVYN2VpNG9BYkVRV3Y0TVlMZUhLdjQwSVV3UW5uL25ZdmZxQ29JcWxRaVVpU1JQbStqNVFTei9PNDd4dkhjUmlHZ2I3dnNTeUw2N3FRNy91YW9XNHN5L0kzYXYwOGp6SHlsZFNHZmQrcDY5cXcxbTNia21VWlFnalQweXlpS0ZKNlE4ZVdaVWxSRklSaGFLS2JwdUU4VCtaNVJyaXVxejZna2VjNVZWVXhqaVBUTkpremp1TmcyemJzN3htQ0lDQk5VK0k0cHVzNmxGS3M2NHB0MjBicnhCODZ4VmdkUHdJV2NRQUFBQUJKUlU1RXJrSmdnZz09Ii8+PGZpbHRlciBpZD0iYmx1ciI+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iLjUiIC8+PC9maWx0ZXI+PC9zdmc+">
                         </amp-img>
@@ -25,7 +25,7 @@
                     <?= countComments($featured->replies->totalItems) ?>
                 </a>
             </div>
-            <div class="article-description mt-4 mt-md-0 ms-md-5 d-flex justify-content-start flex-column">
+            <div class="article-description mt-4 d-flex justify-content-start flex-column">
                 <?= tags($featured->labels,"success","rounded-pill px-3 py-1") ?>
                 <h1 class="ampstart-title-sm bold fs-4 lh-sm"><a
                         href="<?= base_url(urlWithoutDomain($featured->url)) ?>"

@@ -63,9 +63,9 @@ class Pages extends CI_Controller
   //   $this->load->view('layouts/app', $data);
   // }
 
-  public function p($path)
+  public function p($id)
   {
-    $id = $this->input->get('id');
+    // $id = $this->input->get('id');
     $converter = new Converter();
 
     //Load built-in converters

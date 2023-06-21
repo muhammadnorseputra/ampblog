@@ -36,7 +36,7 @@
                         class="fa fa-home text-secondary fs-6"></i>
                     <span>Beranda</span></a>
             </li>
-            <li class="ampstart-nav-item ampstart-nav-dropdown relative border-top py-0 my-0">
+            <li class="ampstart-nav-item ampstart-nav-dropdown relative border-top" style="margin:0px;padding:0px;">
                 <!-- Start Dropdown-inline -->
                 <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown">
                     <section>
@@ -56,7 +56,7 @@
                 </amp-accordion>
                 <!-- End Dropdown-inline -->
             </li>
-            <li class="ampstart-nav-item ampstart-nav-dropdown relative py-0 my-0">
+            <li class="ampstart-nav-item ampstart-nav-dropdown relative" style="margin:0px;padding:0px;">
                 <!-- Start Dropdown-inline -->
                 <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown">
                     <section>
@@ -73,7 +73,7 @@
                 </amp-accordion>
                 <!-- End Dropdown-inline -->
             </li>
-            <li class="ampstart-nav-item ampstart-nav-dropdown relative border-bottom py-0 my-0">
+            <li class="ampstart-nav-item ampstart-nav-dropdown relative border-bottom" style="margin:0px;padding:0px;">
                 <!-- Start Dropdown-inline -->
                 <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown">
                     <section>
@@ -94,10 +94,8 @@
             foreach($this->config->item('pages_data') as $p): 
           ?>
             <li class="ampstart-nav-item">
-                <!-- <a class="ampstart-nav-link"
-                    href="<?= base_url('page/'.$p->id) ?>"><?= ucwords($p->title) ?></a> -->
-                    <a class="ampstart-nav-link"
-                    href="<?= urlWithoutDomain($p->url) ?>?id=<?= $p->id ?>"><?= ucwords($p->title) ?></a>
+                 <a class="ampstart-nav-link"
+                    href="<?= base_url('p/'.$p->id) ?>"><?= ucwords($p->title) ?></a>
             </li>
             <?php endforeach; ?>
         </ul>

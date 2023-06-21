@@ -4,9 +4,9 @@
             <article class="post">
                 <div class="mw-100 overflow-y-hidden overflow-x-auto">
 
-                    <?= tags($post->labels,"success","rounded-pill px-3 py-1") ?>
+                    <?= tags($post->labels,"success","rounded-pill px-3 pt-2") ?>
                 </div>
-                <h1 class="fs-1 fw-bold lh-sm text-black mt-4 mb-3">
+                <h1 class="fs-1 fw-bold lh-sm text-black mt-2 mb-3" style="line-height: 1.25;margin-block-start: 0;">
                     <?= $post->title ?>
                 </h1>
                 <div class="d-flex justify-content-start align-items-center mt-md-2 pb-md-3 border-bottom border-light-subtle">
