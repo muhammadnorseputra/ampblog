@@ -47,9 +47,8 @@
                             );
                             $paragraf_baru = str_replace(array_keys($filters), array_values($filters), $featured_content); 
                         ?>
-                        <amp-script src="<?= base_url("assets/js/toc.js") ?>" layout="container">
                             <?= $paragraf_baru; ?>
-                        </amp-script>
+                        
                 <hr>
             </article>
             
