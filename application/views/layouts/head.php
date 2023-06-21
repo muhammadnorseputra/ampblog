@@ -133,7 +133,7 @@
         <?php 
             include('assets/css/bs.min.css');
             include('assets/css/page.min.css');
-            include('assets/css/normalize.min.css');
+            // include('assets/css/normalize.min.css');
             include('assets/css/custom.min.css');
         ?>
 </style>
