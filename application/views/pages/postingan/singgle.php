@@ -121,7 +121,8 @@
         "@type": "Person",
         "name": "<?= $post->author->displayName ?>",
         "url": "<?= $post->author->url ?>"
-    }
+    },
+    "description": "<?= headlineText($post->content, 200) ?>"
 }
 </script>
 <script type="application/ld+json">
