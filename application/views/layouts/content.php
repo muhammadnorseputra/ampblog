@@ -1,6 +1,7 @@
 <body>
     <amp-install-serviceworker src="<?= base_url('sw.js') ?>" data-iframe-src="install-sw.html" layout="nodisplay">
     </amp-install-serviceworker>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-6755361630409176"></amp-auto-ads>
     <!-- Start Navbar -->
     <?php include_once("header.php"); ?>
 
