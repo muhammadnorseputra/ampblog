@@ -163,7 +163,8 @@
                     "@type": "Person",
                     "name": "<?= $p->author->displayName ?>",
                     "url": "<?= $p->author->url ?>"
-                }
+                },
+                "description": "<?= headlineText($p->content, 200) ?>"
             }
             </script>
         </div>

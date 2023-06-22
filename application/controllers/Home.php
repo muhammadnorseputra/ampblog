@@ -23,7 +23,7 @@ class Home extends CI_Controller {
     public function index()
     {
         $featured = getFeatured();
-        $posts_list = getPosts(7,"true","false");
+        $posts_list = getPosts(7,"true","true");
         $data = [
             'featured' => $featured->items[0],
             'posts' => $posts_list->items,
