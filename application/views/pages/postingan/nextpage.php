@@ -9,7 +9,7 @@
         foreach($posts as $v => $p):
             if($start <> 1) {
     ?>
-        <div class="col-md-4">
+        <div class="col-md-6">
             <article class="article">
                 <div class="flex flex-column justify-between">
                     <div class="pThumb">
