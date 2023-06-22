@@ -15,7 +15,7 @@
                 <input type="text" name="q" class="form-control rounded-start-pill ps-4 border-secondary-subtle"
                     placeholder="Search article: type title or labels ..." aria-label="Search"
                     aria-describedby="buttonSearch">
-                <button
+                <button name="search"
                     class="btn btn-outline-secondary border-secondary-subtle rounded-start-0 rounded-end-pill d-flex justify-content-between align-items-center gap-2"
                     type="submit" id="buttonSearch"><i class="fa fa-search px-2"></i></button>
             </div>
