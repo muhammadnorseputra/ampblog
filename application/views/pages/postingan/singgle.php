@@ -10,7 +10,7 @@
                     <?= $post->title ?>
                 </h1>
                 <div class="d-flex justify-content-start align-items-center mt-md-2 pb-md-3 border-bottom border-light-subtle">
-                <div class="rounded me-3 inline-flex overflow-hidden">
+                <div class="rounded me-3 inline-flex overflow-hidden d-none d-md-block">
                     <amp-img alt="<?= $post->author->displayName ?>" src="<?= $post->author->image->url ?>"
                         layout="fixed" height="30" width="30" placeholder>
                         <amp-img alt="AMP Fallback" fallback width="30" height="30" class="circle"
