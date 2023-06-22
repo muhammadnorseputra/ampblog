@@ -76,7 +76,8 @@
     "dateModified": "<?= $featured->updated ?>",
     "author": {
         "@type": "Person",
-        "name": "<?= $featured->author->displayName ?>"
+        "name": "<?= $featured->author->displayName ?>",
+        "url": "<?= $featured->author->url ?>"
     },
     "publisher": {
         "@type": "Organization",
@@ -88,7 +89,7 @@
             "height": 60
         }
     },
-    "description": "<?= $this->config->item('blog_desc') ?>"
+    "description": "<?= headlineText($featured->content, 200) ?>"
 }
 </script>
 
