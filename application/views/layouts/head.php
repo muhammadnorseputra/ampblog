@@ -83,21 +83,6 @@
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
-            "@type": "WebSite",
-            "url": "<?= base_url() ?>",
-            "potentialAction": {
-                "@type": "SearchAction",
-                "target": {
-                    "@type": "EntryPoint",
-                    "urlTemplate": "<?= base_url() ?>search?q={search_term_string}"
-                },
-                "query-input": "required name=search_term_string"
-            }
-        }
-    </script>
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
             "@type": "Organization",
             "url": "<?= base_url() ?>",
             "logo": "<?= base_url("assets/img/blog/mediabalangan_mini.png") ?>"
@@ -109,20 +94,11 @@
             "@type": "WebSite",
             "url": "<?= base_url() ?>",
             "name": "<?= $this->config->item('blog_name') ?>",
-            "alternateName": "<?= $this->config->item('blog_desc') ?>",
             "potentialAction": {
                 "@type": "SearchAction",
                 "target": "<?= base_url('search?q={search_term_string}') ?>",
                 "query-input": "required name=search_term_string"
             }
-        }
-    </script>
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "url": "<?= base_url() ?>",
-            "logo": "https://lh3.googleusercontent.com/ZXvWeA-BxPxqoRyXhn-PSWYD7XwKInpIy4Vy0KU1OiHfLT1vRvpWh_OnSIZKSqZuGRaSK9g9R0E"
         }
     </script>
     <style amp-custom>
