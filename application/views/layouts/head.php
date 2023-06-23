@@ -11,6 +11,9 @@
     <meta content='media balangan, media center balangan, bedia, teknologi, pendidikan, blogger, adsense, pengetahuan, tips dan trik, cara-cara, belajar, tutorial' name='keywords' />
     <meta content='IE=edge' http-equiv='X-UA-Compatible' />
     <meta content='max-image-preview:large' name='robots' />
+    <meta name="robots" content="index,follow"/>
+    <meta name="googlebot-news" content="index, follow" />
+    <meta  name="googlebot" content="index, follow" />
 
     <link rel="canonical" href="<?= curPageURL() ?>" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
