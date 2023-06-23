@@ -205,20 +205,7 @@ if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
         $start++;
         endforeach; 
     ?>
-    </div>
-    <div class="row">
-        <div class="container text-center mt-5">
-            <div class="d-flex flex-row justify-between">
-                <button aria-label="Home" <?= base_url('index.php') == current_url() ? "disabled" : "" ?>
-                    class="btn btn-sm btn-rounded btn-secondary text-mutted px-3"><i class="fa fa-home"
-                        aria-hidden="true"></i></button>
-                <button aria-label="Next Page"
-                    class="btn btn-success py-2 d-flex flex-row justify-content-between align-items-center"
-                    on="tap:AMP.navigateTo(url=<?= 'nextpage/'.$posts_nextoken ?>)">
-                    <span> Postingan selanjutnya</span> <i class="fa fa-chevron-right ms-2"
-                        aria-hidden="true"></i></button>
-            </div>
-            <?php 
+    <?php 
             // CEK MODE DEVELOPMENT
             $whitelist = array('127.0.0.1', "::1","http://localhost");
             if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
@@ -234,6 +221,20 @@ if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
             </amp-ad>
             </div>
             <?php } ?>
+    </div>
+    <div class="row">
+        <div class="container text-center mt-5">
+            <div class="d-flex flex-row justify-between">
+                <button aria-label="Home" <?= base_url('index.php') == current_url() ? "disabled" : "" ?>
+                    class="btn btn-sm btn-rounded btn-secondary text-mutted px-3"><i class="fa fa-home"
+                        aria-hidden="true"></i></button>
+                <button aria-label="Next Page"
+                    class="btn btn-success py-2 d-flex flex-row justify-content-between align-items-center"
+                    on="tap:AMP.navigateTo(url=<?= 'nextpage/'.$posts_nextoken ?>)">
+                    <span> Postingan selanjutnya</span> <i class="fa fa-chevron-right ms-2"
+                        aria-hidden="true"></i></button>
+            </div>
+            
         </div>
     </div>
 </section>
