@@ -5,12 +5,12 @@
 
 
     # # HTTP to HTTPS
-    # RewriteCond %{HTTP_HOST} !=localhost
-    # RewriteCond %{HTTP_HOST} !=127.0.0.1
-    # RewriteCond %{REMOTE_ADDR} !=127.0.0.1
-    # RewriteCond %{REMOTE_ADDR} !=::1
-    # RewriteCond %{HTTPS} !on
-    # RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+    RewriteCond %{HTTP_HOST} !=localhost
+    RewriteCond %{HTTP_HOST} !=127.0.0.1
+    RewriteCond %{REMOTE_ADDR} !=127.0.0.1
+    RewriteCond %{REMOTE_ADDR} !=::1
+    RewriteCond %{HTTPS} !on
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
     # # Redirect non-www to www
     # RewriteCond %{HTTP_HOST} !=localhost
@@ -21,9 +21,9 @@
     # RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
 
     # # Remove WWW from the url
-    # RewriteCond %{HTTPS} !=on
-    # RewriteCond %{HTTP_HOST} ^www.(.+)$ [NC]
-    # RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP_HOST} ^www.(.+)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
     # # Optional to redirect trailing slashes
     # RewriteRule ^(.*)/$ /$1 [L,R=301]
