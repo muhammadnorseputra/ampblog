@@ -1,6 +1,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+        <?php 
+        // CEK MODE DEVELOPMENT
+        $whitelist = array('127.0.0.1', "::1","http://localhost");
+        if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
+        ?>
         <section class="ads">
         <amp-ad
             layout="responsive"
@@ -11,6 +16,7 @@
             data-ad-slot="2383481957">
         </amp-ad>
         </section>
+        <?php } ?>
             <article class="post">
                 <div class="mw-100 overflow-y-hidden overflow-x-auto">
 
@@ -19,6 +25,22 @@
                 <h1 class="fs-1 fw-bold lh-sm text-black mt-2 mb-3" style="line-height: 1.25;margin-block-start: 0;">
                     <?= $post->title ?>
                 </h1>
+                <?php 
+                // CEK MODE DEVELOPMENT
+                $whitelist = array('127.0.0.1', "::1","http://localhost");
+                if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
+                ?>
+                <section class="ads">
+                <amp-ad
+                    layout="responsive"
+                    width="728"
+                    height="90"
+                    type="adsense"
+                    data-ad-client="ca-pub-6755361630409176"
+                    data-ad-slot="2383481957">
+                </amp-ad>
+                </section>
+                <?php } ?>
                 <div class="d-flex justify-content-start align-items-center mt-md-2 pb-md-3 border-bottom border-light-subtle">
                 <div class="rounded me-3 inline-flex overflow-hidden d-none d-md-block">
                     <amp-img alt="<?= $post->author->displayName ?>" src="<?= $post->author->image->url ?>"
@@ -64,8 +86,13 @@
             
         </div>
     </div>
+    <?php 
+    // CEK MODE DEVELOPMENT
+    $whitelist = array('127.0.0.1', "::1","http://localhost");
+    if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
+    ?>
     <section>
-    <amp-ad width="100vw" height="320"
+    <amp-ad width="100vw" height="220"
                 type="adsense"
                 data-ad-client="ca-pub-6755361630409176"
                 data-ad-slot="9629472612"
@@ -74,6 +101,7 @@
             <div overflow=""></div>
             </amp-ad>
     </section>
+    <?php } ?>
     <!-- Section Next / Prev Article -->
     <!-- <div class="row">
         <div class="col-md-10 offset-lg-1 mt-3">
@@ -82,7 +110,7 @@
     </div> -->
     <!-- Section Comments -->
     <div class="row">
-        <div class="col-md-10 offset-lg-1 mt-3 border px-3 py-4 rounded">
+        <div class="col-md-12 mt-3 border px-3 py-4 rounded">
             <h4 class="fs-5 fw-bold">Comments</h4>
             <p class="note mt-2 mb-5 d-flex justify-content-between align-items-center">
                 Silahkah Isi Komentar Disini

@@ -1,3 +1,8 @@
+<?php 
+// CEK MODE DEVELOPMENT
+$whitelist = array('127.0.0.1', "::1","http://localhost");
+if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
+?>
 <section class="ads">
 <amp-ad
      layout="responsive"
@@ -8,6 +13,7 @@
      data-ad-slot="2383481957">
 </amp-ad>
 </section>
+<?php } ?>
 <section class="labels">
     <div class="d-flex justify-content-start align-items-center mw-100 overflow-y-hidden overflow-x-auto pb-3 gap-3 ">
         <button role="button" disabled aria-label="button" on="tap:AMP.navigateTo(url='/')" title="All" class="btn btn-dark border-0 text-light rounded">All</button>
@@ -21,7 +27,7 @@
         
     </div>
 </section>
-<section class="featured mb-5">
+<section class="featured mb-3">
     <article class="article py-3 px-3 px-md-5 py-md-5 rounded-3 bg-dark bg-gradient text-white shadow">
         <div class="d-flex flex-sm-column flex-md-row flex-lg-row flex-xl-row flex-column justify-content-between">
             <div>
@@ -102,6 +108,11 @@
     "description": "<?= headlineText($featured->content, 200) ?>"
 }
 </script>
+<?php 
+// CEK MODE DEVELOPMENT
+$whitelist = array('127.0.0.1', "::1","http://localhost");
+if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
+?>
 <section class="ads">
 <amp-ad
      layout="responsive"
@@ -112,7 +123,8 @@
      data-ad-slot="2383481957">
 </amp-ad>
 </section>
-<section class="blogList">
+<?php } ?>
+<section class="blogList mt-2">
     <div class="row row-gap-md-5">
 
         <?php
@@ -206,8 +218,13 @@
                     <span> Postingan selanjutnya</span> <i class="fa fa-chevron-right ms-2"
                         aria-hidden="true"></i></button>
             </div>
+            <?php 
+            // CEK MODE DEVELOPMENT
+            $whitelist = array('127.0.0.1', "::1","http://localhost");
+            if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
+            ?>
             <div>
-            <amp-ad width="100vw" height="320"
+            <amp-ad width="100vw" height="220"
                 type="adsense"
                 data-ad-client="ca-pub-6755361630409176"
                 data-ad-slot="9629472612"
@@ -216,6 +233,7 @@
             <div overflow=""></div>
             </amp-ad>
             </div>
+            <?php } ?>
         </div>
     </div>
 </section>
