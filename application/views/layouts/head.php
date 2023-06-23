@@ -12,9 +12,9 @@
     <meta content='media balangan, media center balangan, bedia, teknologi, pendidikan, blogger, adsense, pengetahuan, tips dan trik, cara-cara, belajar, tutorial' name='keywords' />
     <meta content='IE=edge' http-equiv='X-UA-Compatible' />
     <meta content='max-image-preview:large' name='robots' />
-    <meta name="robots" content="index,follow"/>
-    <meta name="googlebot-news" content="index, follow" />
-    <meta  name="googlebot" content="index, follow" />
+    <meta name="robots" content="all"/>
+    <meta name="googlebot-news" content="all" />
+    <meta  name="googlebot" content="all" />
 
     <?php
         $url = curPageURL();
