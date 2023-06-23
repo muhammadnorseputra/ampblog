@@ -219,7 +219,7 @@ if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
                 data-auto-format="autorelaxed"
                 data-auto-format="rspv"
                 data-matched-content-ui-type="image_stacked,image_stacked"
-                data-matched-content-rows-num="3,2"
+                data-matched-content-rows-num="4,2"
                 data-matched-content-columns-num="1,2"
                 data-full-width>
             <div overflow=""></div>
