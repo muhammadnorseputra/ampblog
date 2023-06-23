@@ -12,9 +12,9 @@
     <meta content='IE=edge' http-equiv='X-UA-Compatible' />
     <meta content='max-image-preview:large' name='robots' />
 
-    <link rel="canonical" href="<?= current_url() ?>" />
+    <link rel="canonical" href="<?= curPageURL() ?>" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
-    <link href="<?= current_url() ?>" hreflang="x-default" rel="alternate" />
+    <link href="<?= curPageURL() ?>" hreflang="x-default" rel="alternate" />
 
     <!--[ Favicon ]-->
     <link href='<?= base_url('assets/img/blog/favicon.ico') ?>' rel='apple-touch-icon' sizes='120x120' />
