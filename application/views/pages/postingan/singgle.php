@@ -1,6 +1,16 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 offset-lg-1">
+        <section class="ads">
+        <amp-ad
+            layout="fixed"
+            width="728"
+            height="90"
+            type="adsense"
+            data-ad-client="ca-pub-6755361630409176"
+            data-ad-slot="2383481957">
+        </amp-ad>
+        </section>
             <article class="post">
                 <div class="mw-100 overflow-y-hidden overflow-x-auto">
 
@@ -54,6 +64,16 @@
             
         </div>
     </div>
+    <section>
+    <amp-ad width="100vw" height="320"
+                type="adsense"
+                data-ad-client="ca-pub-6755361630409176"
+                data-ad-slot="9629472612"
+                data-auto-format="mcrspv"
+                data-full-width="">
+            <div overflow=""></div>
+            </amp-ad>
+    </section>
     <!-- Section Next / Prev Article -->
     <!-- <div class="row">
         <div class="col-md-10 offset-lg-1 mt-3">

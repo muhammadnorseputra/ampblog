@@ -1,3 +1,13 @@
+<section class="ads">
+<amp-ad
+     layout="fixed"
+     width="728"
+     height="90"
+     type="adsense"
+     data-ad-client="ca-pub-6755361630409176"
+     data-ad-slot="2383481957">
+</amp-ad>
+</section>
 <section class="labels">
     <div class="d-flex justify-content-start align-items-center mw-100 overflow-y-hidden overflow-x-auto pb-3 gap-3 ">
         <button role="button" disabled aria-label="button" on="tap:AMP.navigateTo(url='/')" title="All" class="btn btn-dark border-0 text-light rounded">All</button>
@@ -92,7 +102,16 @@
     "description": "<?= headlineText($featured->content, 200) ?>"
 }
 </script>
-
+<section class="ads">
+<amp-ad
+     layout="fixed"
+     width="728"
+     height="90"
+     type="adsense"
+     data-ad-client="ca-pub-6755361630409176"
+     data-ad-slot="2383481957">
+</amp-ad>
+</section>
 <section class="blogList">
     <div class="row row-gap-md-5">
 
@@ -186,6 +205,16 @@
                     on="tap:AMP.navigateTo(url=<?= 'nextpage/'.$posts_nextoken ?>)">
                     <span> Postingan selanjutnya</span> <i class="fa fa-chevron-right ms-2"
                         aria-hidden="true"></i></button>
+            </div>
+            <div>
+            <amp-ad width="100vw" height="320"
+                type="adsense"
+                data-ad-client="ca-pub-6755361630409176"
+                data-ad-slot="9629472612"
+                data-auto-format="mcrspv"
+                data-full-width="">
+            <div overflow=""></div>
+            </amp-ad>
             </div>
         </div>
     </div>
