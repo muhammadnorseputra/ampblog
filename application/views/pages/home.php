@@ -211,12 +211,13 @@ if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
             if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
             ?>
             <div>
-            <amp-ad 
+            <amp-ad width="auto" height="320"
                 type="adsense"
                 style="display:block"
                 data-ad-client="ca-pub-6755361630409176"
                 data-ad-slot="9629472612"
-                data-ad-format="autorelaxed"
+                data-auto-format="autorelaxed"
+                data-auto-format="rspv"
                 data-matched-content-ui-type="image_stacked,image_stacked"
                 data-matched-content-rows-num="3,2"
                 data-matched-content-columns-num="1,2"
