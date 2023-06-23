@@ -66,9 +66,9 @@
             <h4 class="fs-5 fw-bold">Comments</h4>
             <p class="note mt-2 mb-5 d-flex justify-content-between align-items-center">
                 Silahkah Isi Komentar Disini
-                <a href="<?= $post->url ?>#comment" target="_blank" class="btn btn-primary rounded-pill text-white d-none d-md-block"><i class="fa fa-comment mr-2"></i> Post a comment</a>
+                <a href="<?= $post->url ?>#comment" target="_blank" class="btn rounded-pill text-white d-none d-md-block" style="border: 1px solid blue; color: #000"><i class="fa fa-comment mr-2"></i> Post a comment</a>
             </p>
-            <a href="<?= $post->url ?>#comment" target="_blank" class="btn btn-primary rounded-pill text-white d-block mb-3 d-md-none"><i class="fa fa-comment mr-2"></i> Post a comment</a>
+            <a href="<?= $post->url ?>#comment" target="_blank" class="btn rounded-pill text-white d-block mb-3 d-md-none" style="border: 1px solid blue; color: #000"><i class="fa fa-comment mr-2"></i> Post a comment</a>
             <?php
                 // var_dump(fetchCommnets($post->id));die();
                 $comments = fetchCommnets($post->id);
