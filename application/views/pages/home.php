@@ -219,7 +219,7 @@ if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
                 data-matched-content-ui-type="image_stacked"
                 data-matched-content-rows-num="2"
                 data-matched-content-columns-num="1"
-                data-full-width="">
+                data-full-width="false">
             <div overflow=""></div>
             </amp-ad>
             </div>
