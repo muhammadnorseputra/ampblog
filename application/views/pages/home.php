@@ -1,6 +1,6 @@
 <section class="ads">
 <amp-ad
-     layout="fixed"
+     layout="responsive"
      width="728"
      height="90"
      type="adsense"
@@ -104,7 +104,7 @@
 </script>
 <section class="ads">
 <amp-ad
-     layout="fixed"
+     layout="responsive"
      width="728"
      height="90"
      type="adsense"
