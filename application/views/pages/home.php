@@ -218,8 +218,8 @@ if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
                 data-ad-slot="9629472612"
                 data-ad-format="autorelaxed"
                 data-matched-content-ui-type="image_stacked,image_stacked"
-                data-matched-content-rows-num="2,4"
-                data-matched-content-columns-num="2,1"
+                data-matched-content-rows-num="4,2"
+                data-matched-content-columns-num="1,2"
                 data-full-width="false">
             </amp-ad>
             </div>
