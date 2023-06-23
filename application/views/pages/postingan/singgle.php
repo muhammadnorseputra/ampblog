@@ -96,13 +96,11 @@
                 style="display:block"
                 data-ad-client="ca-pub-6755361630409176"
                 data-ad-slot="9629472612"
-                data-auto-format="autorelaxed"
-                data-auto-format="rspv"
+                data-ad-format="autorelaxed"
                 data-matched-content-ui-type="image_stacked,image_stacked"
                 data-matched-content-rows-num="4,2"
                 data-matched-content-columns-num="1,2"
-                data-full-width>
-            <div overflow=""></div>
+                data-full-width="false">
             </amp-ad>
     </section>
     <?php } ?>

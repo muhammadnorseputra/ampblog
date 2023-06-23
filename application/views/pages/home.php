@@ -221,7 +221,6 @@ if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
                 data-matched-content-rows-num="4,2"
                 data-matched-content-columns-num="1,2"
                 data-full-width="false">
-            <div overflow=""></div>
             </amp-ad>
             </div>
             <?php } ?>
