@@ -19,7 +19,6 @@
         <?php } ?>
             <article class="post">
                 <div class="mw-100 overflow-y-hidden overflow-x-auto">
-
                     <?= tags($post->labels,"success","rounded-pill px-3 pt-2") ?>
                 </div>
                 <h1 class="fs-1 fw-bold lh-sm text-black mt-2 mb-3" style="line-height: 1.25;margin-block-start: 0;">

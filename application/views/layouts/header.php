@@ -9,7 +9,7 @@
         <amp-img class="pThumb" src="<?= base_url("assets/img/blog/mediabalangan.png") ?>" width="180" height="50"
             layout="intrinsic" alt="The Blog"></amp-img>
     </a>
-    <div class="mx-auto d-none d-md-block w-50">
+    <div class="me-auto d-none d-md-block w-25">
         <form class="sample-form" method="GET" action="<?= base_url('search') ?>" target="_top">
             <div class="input-group">
                 <input type="text" name="q" class="form-control rounded-start-pill ps-4 border-secondary-subtle"
@@ -22,7 +22,7 @@
         </form>
     </div>
     <div>
-        <button class="btn btn-success rounded-circle text-white" role="button" aria-label="Person" type="button"><i
-                class="fa fa-user"></i></button>
+        <a target="_blank" href="https://www.blogger.com/profile/07844400727783384626" class="btn btn-success rounded-pill text-white" aria-label="Person"><i
+                class="fa fa-user"></i> me</a>
     </div>
 </header>
