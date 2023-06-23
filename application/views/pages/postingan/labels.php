@@ -1,3 +1,19 @@
+<?php 
+// CEK MODE DEVELOPMENT
+$whitelist = array('127.0.0.1', "::1","http://localhost");
+if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
+?>
+<section class="ads mb-3">
+<amp-ad
+     layout="responsive"
+     width="728"
+     height="90"
+     type="adsense"
+     data-ad-client="ca-pub-6755361630409176"
+     data-ad-slot="2383481957">
+</amp-ad>
+</section>
+<?php } ?>
 <section class="blogList" id="blogList">
     <div class="row">
         <h3 class="my-4 ml-4 fw-bold border-start border-4 border-success">Posts: <span
@@ -58,6 +74,23 @@
         endforeach; 
     endif;
     ?>
+    <?php 
+    // CEK MODE DEVELOPMENT
+    $whitelist = array('127.0.0.1', "::1","http://localhost");
+    if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
+    ?>
+        <div>
+        <amp-ad width="100vw" height="220"
+            type="adsense"
+            data-ad-client="ca-pub-6755361630409176"
+            data-ad-slot="9629472612"
+            data-auto-format="mcrspv"
+            data-full-width="">
+        <div overflow=""></div>
+        </amp-ad>
+        </div>
+    <?php } ?>
+    </div>
 
         <?php if(empty($posts)): ?>
         <h4>Postingan tidak ditemukan ...</h4>
