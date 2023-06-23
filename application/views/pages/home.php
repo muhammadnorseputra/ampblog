@@ -211,7 +211,7 @@ if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
             if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
             ?>
             <div>
-            <amp-ad width="100vw" height="320"
+            <amp-ad 
                 type="adsense"
                 style="display:block"
                 data-ad-client="ca-pub-6755361630409176"
