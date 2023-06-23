@@ -88,7 +88,8 @@
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
     <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
-    <!-- JSON SCHEMA -->
+    <!-- JSON SCHEMA ONLY HOMEPAGE-->
+    <?php if(base_url() === curPageURL()): ?>
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -110,6 +111,7 @@
             }
         }
     </script>
+    <?php endif; ?>
     <style amp-custom>
         <?php
             include("assets/css/bs.min.css");

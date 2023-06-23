@@ -52,7 +52,7 @@ class Posts extends CI_Controller
 
     $amphtml = $converter->convert($post_data->content);
     $data = [
-      'title' => $title,
+      'title' => @$post_data->title,
       'content' => 'pages/postingan/singgle',
       'self_url' => $path,
       'self_count' => count(get_object_vars($post_data)),
