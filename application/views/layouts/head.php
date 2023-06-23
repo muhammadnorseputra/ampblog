@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
 
     <!-- Primary Meta Tags -->
     <title><?= isset($title) ? $title : "Home" ?> - ⚡ <?= $this->config->item('blog_name') ?></title>
@@ -15,8 +16,11 @@
     <meta name="googlebot-news" content="index, follow" />
     <meta  name="googlebot" content="index, follow" />
 
-    <link rel="canonical" href="<?= curPageURL() ?>" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
+    <?php
+        $url = curPageURL();
+        $newUrl = str_replace("m.mediabalangan.com", "www.mediabalangan.com", $url);
+    ?>
+    <link rel="canonical" href="<?= $newUrl ?>" />
     <link href="<?= curPageURL() ?>" hreflang="x-default" rel="alternate" />
 
     <!--[ Favicon ]-->
