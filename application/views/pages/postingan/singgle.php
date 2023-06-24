@@ -78,7 +78,9 @@
                             );
                             $paragraf_baru = str_replace(array_keys($filters), array_values($filters), $featured_content); 
                         ?>
+                        <div id="postBody">
                             <?= $paragraf_baru; ?>
+                        </div>
                         
                 <hr>
             </article>
