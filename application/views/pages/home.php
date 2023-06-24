@@ -219,7 +219,7 @@ if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
                 data-ad-format="autorelaxed"
                 data-matched-content-ui-type="image_stacked,image_stacked"
                 data-matched-content-rows-num="2,2"
-                data-matched-content-columns-num="2,2"
+                data-matched-content-columns-num="1,2"
                 data-full-width="false">
             </amp-ad>
             </div>
