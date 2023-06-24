@@ -55,7 +55,7 @@ class Posts extends CI_Controller
 
 $og = [
       'type' => 'article',
-      'url' => base_url($path),
+      'url' => base_url(urldecode($path)),
       'title' => $post_data->title,
       'desc' => headlineText($post_data->content,200),
       'image' => fetchImage($post_data->id)
@@ -63,7 +63,7 @@ $og = [
 
     $tw = [
       'type' => 'summary_large_image',
-      'url' => base_url($path),
+      'url' => base_url(urldecode($path)),
       'title' => $post_data->title,
       'desc' => headlineText($post_data->content,200),
       'image' => fetchImage($post_data->id)
