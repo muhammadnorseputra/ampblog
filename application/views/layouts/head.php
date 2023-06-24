@@ -7,8 +7,9 @@
 
     <!-- Primary Meta Tags -->
     <title><?= isset($title) ? $title : "Home" ?> - ⚡ <?= $this->config->item('blog_name') ?></title>
-    <meta name="title" content="<?= $this->config->item('blog_name') ?>" />
-    <meta name="description" content="<?= $this->config->item('blog_desc') ?>" />
+    <meta name="title" content="<?= isset($og['title']) ? $og['title'] . " - " . $this->config->item('blog_name') : $this->config->item('blog_name') ?>" />
+
+    <meta name="description" content="<?= isset($og['desc']) ? preg_replace('/^(?:\s*\R)+|\s*($|\R)/', "", $og['desc']) : $this->config->item('blog_desc') ?>" />
     <meta content='media balangan, media center balangan, bedia, teknologi, pendidikan, blogger, adsense, pengetahuan, tips dan trik, cara-cara, belajar, tutorial' name='keywords' />
     <meta content='IE=edge' http-equiv='X-UA-Compatible' />
     <meta content='max-image-preview:large' name='robots' />
