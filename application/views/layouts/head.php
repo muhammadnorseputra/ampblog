@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ⚡="" lang="id" dir='ltr'>
+<html amp="amp" lang="id" dir='ltr'>
 
 <head>
     <meta charset="utf-8" />
