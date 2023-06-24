@@ -51,6 +51,23 @@ class Posts extends CI_Controller
     }
 
     $amphtml = $converter->convert($post_data->content);
+
+
+$og = [
+      'type' => 'article',
+      'url' => base_url($path),
+      'title' => $post_data->title,
+      'desc' => headlineText($post_data->content,200),
+      'image' => fetchImage($post_data->id)
+    ];
+
+    $tw = [
+      'type' => 'summary_large_image',
+      'url' => base_url($path),
+      'title' => $post_data->title,
+      'desc' => headlineText($post_data->content,200),
+      'image' => fetchImage($post_data->id)
+    ];
     $data = [
       'title' => @$post_data->title,
       'content' => 'pages/postingan/singgle',
@@ -59,6 +76,8 @@ class Posts extends CI_Controller
       // 'featured_image' => fetchImage($post_data->id),
       'featured_content' => $amphtml,
       'post' => $post_data,
+'og' => $og,
+'tw' => $tw
     ];
     $this->load->view('layouts/app', $data);
   }
