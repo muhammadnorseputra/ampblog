@@ -78,10 +78,8 @@
                             );
                             $paragraf_baru = str_replace(array_keys($filters), array_values($filters), $featured_content); 
                         ?>
-                        <?= $paragraf_baru; ?>
-                        
-                        
-                <hr>
+                        <?= $paragraf_baru; ?>   
+                <hr/>
             </article>
             
         </div>

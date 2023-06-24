@@ -76,7 +76,7 @@ class TableOfContents {
 var element = document.getElementById('toContent');
 if (typeof(element) != 'undefined' && element != null) {
     document.addEventListener('DOMContentLoaded', (e) => new TableOfContents({
-        from: document.querySelector('#postBody'),
+        from: document.querySelector('article.post'),
         to: document.querySelector('#toContent')
     }).generateToc())
 }
