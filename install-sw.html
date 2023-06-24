@@ -4,92 +4,101 @@
 	if ("serviceWorker" in navigator) {
 		navigator.serviceWorker.register("/sw.js");
 	}
-	class TableOfContents {
-		constructor({ from, to }) {
-			this.fromElement = from;
-			this.toElement = to;
-			this.headingElements = this.fromElement.querySelectorAll(
-				"h1, h2, h3, h4, h5, h6"
-			);
-			this.tocElement = document.createElement("div");
-		}
-		getMostImportantHeadingLevel() {
-			let mostImportantHeadingLevel = 6;
-			for (let i = 0; i < this.headingElements.length; i++) {
-				let headingLevel = TableOfContents.getHeadingLevel(
-					this.headingElements[i]
-				);
-				mostImportantHeadingLevel =
-					headingLevel < mostImportantHeadingLevel
-						? headingLevel
-						: mostImportantHeadingLevel;
-			}
-			return mostImportantHeadingLevel;
-		}
-		static generateId(headingElement) {
-			return headingElement.textContent.replace(/\s+/g, "_");
-		}
-		static getHeadingLevel(headingElement) {
-			switch (headingElement.tagName.toLowerCase()) {
-				case "h1":
-					return 1;
-				case "h2":
-					return 2;
-				case "h3":
-					return 3;
-				case "h4":
-					return 4;
-				case "h5":
-					return 5;
-				case "h6":
-					return 6;
-				default:
-					return 1;
-			}
-		}
-		generateToc() {
-			let currentLevel = this.getMostImportantHeadingLevel() - 1,
-				currentElement = this.tocElement;
-			for (let i = 0; i < this.headingElements.length; i++) {
-				let headingElement = this.headingElements[i],
-					headingLevel = TableOfContents.getHeadingLevel(headingElement),
-					headingLevelDifference = headingLevel - currentLevel,
-					linkElement = document.createElement("a");
-				if (!headingElement.id) {
-					headingElement.id = TableOfContents.generateId(headingElement);
-				}
-				linkElement.href = `#${headingElement.id}`;
-				linkElement.textContent = headingElement.textContent;
-				if (headingLevelDifference > 0) {
-					for (let j = 0; j < headingLevelDifference; j++) {
-						let listElement = document.createElement("ol"),
-							listItemElement = document.createElement("li");
-						listElement.appendChild(listItemElement);
-						currentElement.appendChild(listElement);
-						currentElement = listItemElement;
-					}
-					currentElement.appendChild(linkElement);
-				} else {
-					for (let j = 0; j < -headingLevelDifference; j++) {
-						currentElement = currentElement.parentNode.parentNode;
-					}
-					let listItemElement = document.createElement("li");
-					listItemElement.appendChild(linkElement);
-					currentElement.parentNode.appendChild(listItemElement);
-					currentElement = listItemElement;
-				}
-				currentLevel = headingLevel;
-			}
-			this.toElement.appendChild(this.tocElement.firstChild);
-		}
-	}
-	var element = document.getElementById("toContent");
-	if (typeof element != "undefined" && element != null) {
-		document.addEventListener("DOMContentLoaded", (e) =>
-			new TableOfContents({
-				from: document.querySelector("#postBody"),
-				to: document.querySelector("#toContent"),
-			}).generateToc()
-		);
-	}
+	class TOC {
+    /**
+     * @param {[HTMLHeadingElement]} headingSet
+     * */
+    static parse(headingSet) {
+      const tocData = []
+      let curLevel = 0
+      let preTocItem = undefined
+
+      headingSet.forEach(heading => {
+        const hLevel = heading.outerHTML.match(/<h([\d]).*>/)[1]
+        const titleText = heading.innerText
+
+        switch (hLevel >= curLevel) {
+          case true:
+            if (preTocItem === undefined) {
+              preTocItem = new TocItem(titleText, hLevel)
+              tocData.push(preTocItem)
+            } else {
+              const curTocItem = new TocItem(titleText, hLevel)
+              const parent = curTocItem.level > preTocItem.level ? preTocItem : preTocItem.parent
+              curTocItem.parent = parent
+              parent.children.push(curTocItem)
+              preTocItem = curTocItem
+            }
+            break
+          case false:
+            // We need to find the appropriate parent node from the preTocItem
+            const curTocItem = new TocItem(titleText, hLevel)
+            while (1) {
+              if (preTocItem.level < curTocItem.level) {
+                preTocItem.children.push(curTocItem)
+                preTocItem = curTocItem
+                break
+              }
+              preTocItem = preTocItem.parent
+
+              if (preTocItem === undefined) {
+                tocData.push(curTocItem)
+                preTocItem = curTocItem
+                break
+              }
+            }
+            break
+        }
+
+        curLevel = hLevel
+
+        if (heading.id === "") {
+          heading.id = titleText.replace(/ /g, "-").toLowerCase()
+        }
+        preTocItem.id = heading.id
+      })
+
+      return tocData
+    }
+
+    /**
+     * @param {[TocItem]} tocData
+     * @return {string}
+     * */
+    static build(tocData) {
+      let result = "<ul>"
+      tocData.forEach(toc => {
+        result += `<li><a href=#${toc.id}>${toc.text}</a></li>`
+        if (toc.children.length) {
+          result += `${TOC.build(toc.children)}`
+        }
+      })
+      return result + "</ul>"
+    }
+  }
+
+  /**
+   * @param {string} text
+   * @param {int} level
+   * @param {TocItem} parent
+   * */
+  function TocItem(text, level, parent = undefined) {
+    this.text = text
+    this.level = level
+    this.id = undefined
+    this.parent = parent
+    this.children = []
+  }
+
+  window.onload = () => {
+
+    const headingSet = document.querySelectorAll("h1, h2, h3, h4, h5, h6") // You can also select only the titles you are interested in.
+    const tocData = TOC.parse(headingSet)
+    
+    console.log(tocData)
+
+    const tocHTMLContent = TOC.build(tocData)
+    const frag = document.createRange().createContextualFragment(`<fieldset class="fixed-top"><legend>TOC</legend>${tocHTMLContent}</fieldset>`)
+    document.querySelector(`body`).insertBefore(frag, document.querySelector(`body`).firstChild)
+  }
 </script>
