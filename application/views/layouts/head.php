@@ -20,8 +20,8 @@
         $url = curPageURL();
         $newUrl = str_replace("m.mediabalangan.com", "www.mediabalangan.com", $url);
     ?>
-    <link rel="canonical" href="<?= $newUrl ?>" />
-    <link href="<?= curPageURL() ?>" hreflang="x-default" rel="alternate" />
+    <link rel="canonical" href="<?= $url ?>" />
+    <link href="<?= $url ?>" hreflang="x-default" rel="alternate" />
 
     <!--[ Favicon ]-->
     <link href='<?= base_url('assets/img/blog/favicon.ico') ?>' rel='apple-touch-icon' sizes='120x120' />
