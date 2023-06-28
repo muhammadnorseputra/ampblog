@@ -20,7 +20,7 @@
         $url = curPageURL();
         $newUrl = str_replace("m.mediabalangan.com", "www.mediabalangan.com", $url);
     ?>
-    <link rel="canonical" href="<?= $newUrl ?>" />
+    <link rel="canonical" href="<?= $url ?>" />
     <link href="<?= $url ?>" hreflang="x-default" rel="alternate" />
 
     <!--[ Favicon ]-->
